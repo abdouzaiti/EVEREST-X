@@ -46,11 +46,15 @@
   background: #3f3f46;
 }
 
-/* Base body style for premium dark feel */
-body {
+/* Base html and body styles to completely prevent horizontal overflow on mobile browsers */
+html, body {
   background-color: #000000;
   color: #ffffff;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 

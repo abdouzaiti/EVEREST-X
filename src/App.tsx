@@ -97,7 +97,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-brand-primary min-h-screen text-white relative font-sans selection:bg-brand-accent selection:text-white" id="everestx-root">
+    <div className="bg-brand-primary min-h-screen text-white relative font-sans selection:bg-brand-accent selection:text-white w-full max-w-full overflow-x-hidden" id="everestx-root">
       {/* Immersive Custom Cursor */}
       <CustomCursor />
 
