@@ -1,0 +1,6 @@
+{
+  "name": "EverestX Digital Agency",
+  "description": "Premium digital agency helping businesses transform ideas into modern digital products and strong brands through software development, creative design, and branding.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-primary: #000000;
+  --color-brand-secondary: #0a0a0a;
+  --color-brand-accent: #ffffff;
+  --color-brand-success: #10b981;
+  --color-brand-gray: #a1a1aa;
+  --color-brand-dark-gray: #52525b;
+  
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float-delayed 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(12px); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Base body style for premium dark feel */
+body {
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Subtle glow overlays - converted to super faint white-gray highlights */
+.glow-bg {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-bg-purple {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Cosmic Parallax Container */
+.cosmic-parallax-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #050811 0%, #000000 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Star layers positioning */
+.cosmic-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  pointer-events: none;
+  animation: animStar 60s linear infinite;
+  z-index: 1;
+}
+
+.cosmic-stars-medium {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  pointer-events: none;
+  animation: animStar 120s linear infinite;
+  z-index: 1;
+}
+
+.cosmic-stars-large {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  pointer-events: none;
+  animation: animStar 180s linear infinite;
+  z-index: 1;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Horizon & earth curve atmospheres */
+#horizon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.08) 0%, rgba(5, 8, 17, 0) 75%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#horizon .glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220%;
+  height: 240px;
+  background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0) 65%);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50% / 100% 100% 0 0;
+}
+
+#earth {
+  position: absolute;
+  bottom: -460px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1400px;
+  height: 650px;
+  background: radial-gradient(circle at center, #020205 0%, #000000 80%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  box-shadow: 0 -15px 40px rgba(16, 185, 129, 0.04), inset 0 15px 30px rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Celestial Typography with subtle backglow */
+#title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
+  letter-spacing: 0.15em;
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(to bottom, #ffffff 45%, rgba(255, 255, 255, 0.35) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.05));
+  line-height: 1.15;
+  z-index: 10;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+#subtitle {
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: var(--color-brand-gray);
+  z-index: 10;
+  pointer-events: none;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+}
+
+#subtitle span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSubtitle 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtitle cascade timings */
+#subtitle .subtitle-part-1 { animation-delay: 0.3s; }
+#subtitle .subtitle-part-2 { animation-delay: 0.5s; }
+#subtitle .subtitle-part-3 { animation-delay: 0.7s; }
+#subtitle .subtitle-part-4 { animation-delay: 0.9s; }
+
+@keyframes fadeInSubtitle {
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
