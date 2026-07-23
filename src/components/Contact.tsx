@@ -32,7 +32,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
     if (prefilledContext) {
       setFormData(prev => ({
         ...prev,
-        message: `Hello EverestX. I would like to inquire about: "${prefilledContext}".`
+        message: `Bonjour EverestX. Je souhaite obtenir des informations sur : "${prefilledContext}".`
       }));
     }
   }, [prefilledContext]);
@@ -45,9 +45,9 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
-        hour12: true
+        hour12: false
       };
-      setCurrentTime(new Date().toLocaleTimeString('en-US', options));
+      setCurrentTime(new Date().toLocaleTimeString('fr-FR', options));
     };
     updateTime();
     const timer = setInterval(updateTime, 1000);
@@ -100,14 +100,14 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20">
-            09 // COLLABORATION PROTOCOL
+            09 // PROTOCOLE DE COLLABORATION
           </span>
           <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
-            Elevate your digital posture. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">Let's create something iconic.</span>
+            Élevez votre présence numérique. <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">Créons quelque chose d'iconique.</span>
           </h2>
           <p className="text-brand-gray text-base font-light mt-4 max-w-xl">
-            Submit your project details below. Our technical directors and creative leads review all submissions within 12 business hours.
+            Soumettez les détails de votre projet ci-dessous. Nos directeurs techniques et responsables créatifs étudient toutes les propositions sous 12 heures ouvrées.
           </p>
         </div>
 
@@ -132,7 +132,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                       {/* Name */}
                       <div className="space-y-2">
                         <label className="block text-[10px] font-mono text-brand-gray uppercase tracking-widest" htmlFor="name">
-                          Full Name *
+                          Nom Complet *
                         </label>
                         <input
                           type="text"
@@ -141,7 +141,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          placeholder="e.g. Sarah Jenkins"
+                          placeholder="ex. Sarah Jenkins"
                           className="w-full bg-brand-primary/80 border border-white/5 focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors"
                         />
                       </div>
@@ -149,7 +149,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                       {/* Email */}
                       <div className="space-y-2">
                         <label className="block text-[10px] font-mono text-brand-gray uppercase tracking-widest" htmlFor="email">
-                          Email Address *
+                          Adresse E-mail *
                         </label>
                         <input
                           type="email"
@@ -168,7 +168,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                       {/* Company */}
                       <div className="space-y-2">
                         <label className="block text-[10px] font-mono text-brand-gray uppercase tracking-widest" htmlFor="company">
-                          Company / Venture
+                          Entreprise / Projet
                         </label>
                         <input
                           type="text"
@@ -184,7 +184,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                       {/* Project Budget */}
                       <div className="space-y-2">
                         <label className="block text-[10px] font-mono text-brand-gray uppercase tracking-widest" htmlFor="budget">
-                          Target Budget Range
+                          Budget Estimé
                         </label>
                         <select
                           id="budget"
@@ -203,7 +203,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                     {/* Message */}
                     <div className="space-y-2">
                       <label className="block text-[10px] font-mono text-brand-gray uppercase tracking-widest" htmlFor="message">
-                        Brief Project Scope
+                        Brève description du projet
                       </label>
                       <textarea
                         id="message"
@@ -211,7 +211,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Tell us about your target clients, deliverables, and timelines..."
+                        placeholder="Parlez-nous de vos clients cibles, de vos livrables, de vos délais..."
                         className="w-full bg-brand-primary/80 border border-white/5 focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors resize-none"
                       />
                     </div>
@@ -226,12 +226,12 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                       {isSubmitting ? (
                         <>
                           <div className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
-                          <span>SYNCHRONIZING SECURE NODE...</span>
+                          <span>TRANSMISSION EN COURS...</span>
                         </>
                       ) : (
                         <>
                           <Send className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                          <span>Transmit Inquiry</span>
+                          <span>Transmettre la demande</span>
                         </>
                       )}
                     </button>
@@ -249,13 +249,13 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
 
                     <div>
                       <span className="block text-[10px] font-mono text-brand-success uppercase tracking-widest font-semibold">
-                        TRANSMISSION SECURED
+                        TRANSMISSION SÉCURISÉE
                       </span>
                       <h3 className="text-2xl font-bold text-white tracking-tight mt-2">
-                        Inquiry Received successfully!
+                        Demande reçue avec succès !
                       </h3>
                       <p className="text-xs text-brand-gray font-light max-w-sm mx-auto mt-2 leading-relaxed">
-                        Our lead technical architects and creative directors have received your project scope logs. We are compiling your custom operational proposal now.
+                        Nos architectes techniques et directeurs créatifs ont bien reçu la description de votre projet. Nous préparons votre proposition sur mesure.
                       </p>
                     </div>
 
@@ -263,7 +263,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                       onClick={() => setIsSubmitted(false)}
                       className="px-6 py-2.5 rounded-xl bg-brand-primary border border-white/5 text-xs text-brand-gray hover:text-white transition-colors cursor-pointer focus:outline-none"
                     >
-                      Transmit New Message
+                      Transmettre un autre message
                     </button>
                   </motion.div>
                 )}
@@ -282,7 +282,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
 
               <div>
                 <span className="text-[10px] font-mono text-brand-dark-gray uppercase tracking-widest block mb-1">
-                  OFFICIAL COORDINATES
+                  COORDONNÉES OFFICIELLES
                 </span>
                 <span className="font-sans font-bold text-base text-white block">
                   Everest <span className="text-blue-400 font-black inline-block ml-0.5 scale-110">X</span>
@@ -294,14 +294,14 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
 
               <div className="flex justify-between items-end border-t border-white/5 pt-4">
                 <div>
-                  <span className="block text-[9px] font-mono text-brand-dark-gray uppercase">CURRENT TEAM TIME</span>
+                  <span className="block text-[9px] font-mono text-brand-dark-gray uppercase">HEURE DE L'ÉQUIPE</span>
                   <span className="text-xl sm:text-2xl font-bold font-mono text-white mt-1 block">
-                    {currentTime || '12:00:00 PM'}
+                    {currentTime || '12:00:00'}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 px-2.5 py-1 bg-brand-success/10 border border-brand-success/20 rounded-md">
                   <span className="w-1.5 h-1.5 bg-brand-success rounded-full animate-pulse" />
-                  <span className="text-[9px] font-mono font-semibold text-brand-success uppercase">Active & Render Ready</span>
+                  <span className="text-[9px] font-mono font-semibold text-brand-success uppercase">Actif & Prêt</span>
                 </div>
               </div>
             </div>
@@ -319,14 +319,14 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                   <Mail className={`w-4 h-4 transition-all duration-300 ${copied ? 'text-brand-success scale-110' : 'text-brand-accent'}`} />
                 </div>
                 <span className={`block text-[9px] font-mono tracking-wider uppercase transition-colors duration-300 ${copied ? 'text-brand-success font-bold' : 'text-brand-dark-gray'}`}>
-                  {copied ? '✓ COPIED TO CLIPBOARD' : 'DIRECT DISPATCH'}
+                  {copied ? '✓ COPIÉ' : 'ENVOI DIRECT'}
                 </span>
                 <span className="block text-xs font-bold text-white mt-1 group-hover:text-brand-accent transition-colors">
                   hello@everestx.com
                 </span>
                 {copied && (
                   <span className="absolute bottom-2 right-3 text-[7px] font-mono text-brand-success font-bold uppercase animate-pulse">
-                    ready to write
+                    prêt à écrire
                   </span>
                 )}
               </button>
@@ -342,7 +342,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                 <div className="w-9 h-9 rounded-xl bg-brand-primary border border-white/5 flex items-center justify-center mb-4 group-hover:border-brand-accent/30 transition-colors">
                   <MessageCircle className="w-4 h-4 text-brand-success" />
                 </div>
-                <span className="block text-[9px] font-mono text-brand-dark-gray uppercase">SECURE CHAT</span>
+                <span className="block text-[9px] font-mono text-brand-dark-gray uppercase">CHAT SÉCURISÉ</span>
                 <span className="block text-xs font-bold text-white mt-1 group-hover:text-brand-success transition-colors">
                   +44 7700 900077
                 </span>
@@ -373,7 +373,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
               <div className="relative z-20 p-5 flex items-center justify-between">
                 <div>
                   <span className="text-[8px] font-mono text-brand-accent tracking-widest block mb-0.5 uppercase">
-                    interactive viewport
+                    carte interactive
                   </span>
                   <span className="font-sans font-bold text-xs text-white block">
                     Everest <span className="text-blue-400 font-black inline-block ml-0.5 scale-110">X</span>
@@ -386,7 +386,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                   className="px-3.5 py-1.5 rounded-lg bg-brand-accent hover:bg-white text-[10px] font-semibold text-black tracking-wider transition-all flex items-center gap-1 group/btn"
                   id="get-directions-btn"
                 >
-                  <span>Get Directions</span>
+                  <span>S'y rendre</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </a>
               </div>

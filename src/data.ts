@@ -39,6 +39,7 @@ export interface ProjectItem {
   technologies: string[];
   gradient: string;
   uiMockupType: 'fintech' | 'medical' | 'education' | 'dining';
+  link?: string;
 }
 
 export interface TestimonialItem {
@@ -73,210 +74,271 @@ export interface TechnologyItem {
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'software-development',
-    title: 'Software Development',
-    description: 'We build robust, scalable, and ultra-high-performance applications designed to power modern enterprises.',
+    title: 'Développement de Logiciels',
+    description: 'Nous concevons des applications robustes, évolutives et ultra-performantes, conçues pour propulser les entreprises modernes.',
     icon: Code2,
     glowColor: 'rgba(10, 132, 255, 0.15)',
     items: [
-      'Corporate Websites',
-      'High-converting Landing Pages',
-      'Modern Web Applications',
-      'iOS & Android Mobile Apps',
-      'Desktop Applications',
-      'Custom Business Systems',
-      'ERP / CRM Integrations',
-      'High-throughput API Solutions',
-      'SLA-backed Maintenance & Support'
+      'Sites Web d\'Entreprise',
+      'Pages de Destination (Landing Pages)',
+      'Applications Web Modernes',
+      'Applications Mobiles iOS & Android',
+      'Applications de Bureau (Desktop)',
+      'Systèmes Métiers sur Mesure',
+      'Intégrations ERP / CRM',
+      'Solutions API à Haut Débit',
+      'Maintenance et Support sous Contrat (SLA)'
     ]
   },
   {
     id: 'creative-design',
-    title: 'Creative Design',
-    description: 'Bespoke interfaces and graphic narratives crafted to catch attention and communicate pristine quality.',
+    title: 'Design Créatif',
+    description: 'Interfaces sur mesure et narrations graphiques conçues pour captiver l\'attention et transmettre une qualité irréprochable.',
     icon: Palette,
     glowColor: 'rgba(168, 85, 247, 0.15)',
     items: [
-      'UI/UX Design & Architecture',
-      'Visual Logo Engineering',
-      'Holistic Brand Identity Systems',
-      'Social Media Media Kits',
-      'Corporate Graphic Assets',
-      'High-end Marketing Materials'
+      'Architecture & Design UI/UX',
+      'Conception de Logos & Identité',
+      'Systèmes d\'Identité Globale de Marque',
+      'Kits de Communication Réseaux Sociaux',
+      'Ressources Graphiques d\'Entreprise',
+      'Supports Marketing Haut de Gamme'
     ]
   },
   {
     id: 'branding',
-    title: 'Branding & Strategy',
-    description: 'We crystallize your core values into an iconic, memorable brand position that commands market authority.',
+    title: 'Branding & Stratégie',
+    description: 'Nous cristallisons vos valeurs fondamentales en un positionnement de marque emblématique et mémorable qui s\'impose sur le marché.',
     icon: Target,
     glowColor: 'rgba(0, 208, 132, 0.15)',
     items: [
-      'Comprehensive Brand Strategy',
-      'Target Demographic Audits',
-      'Linguistic Brand Naming',
-      'Exhaustive Brand Guidelines',
-      'Strategic Corporate Rebranding'
+      'Stratégie Globale de Marque',
+      'Analyses Démographiques Cibles',
+      'Recherche de Noms de Marque (Naming)',
+      'Chartes Graphiques Exhaustives',
+      'Rebranding Stratégique d\'Entreprise'
     ]
   },
   {
     id: 'media-production',
-    title: 'Media Production',
-    description: 'Immersive visual storyboards, motion design, and video assets to captivate digital audiences.',
+    title: 'Production Médias',
+    description: 'Storyboards visuels immersifs, motion design et contenus vidéo conçus pour captiver les audiences numériques.',
     icon: Video,
     glowColor: 'rgba(239, 68, 68, 0.15)',
     items: [
-      'Cinematic Promotional Videos',
-      'High-fidelity Video Editing',
-      'Sophisticated Motion Graphics',
-      'Viral Reels & Shorts Production',
-      'Executive Corporate Videos'
+      'Vidéos Promotionnelles Cinématiques',
+      'Montage Vidéo Haute Fidélité',
+      'Graphiques Animés (Motion Design)',
+      'Production de Reels & Shorts Viraux',
+      'Vidéos de Présentation Institutionnelle'
     ]
   },
   {
     id: 'digital-marketing',
-    title: 'Digital Marketing',
-    description: 'Data-driven campaigns and absolute growth strategies designed to turn views into customer loyalists.',
+    title: 'Marketing Numérique',
+    description: 'Campagnes axées sur les données et stratégies de croissance absolue conçues pour transformer les vues en clients fidèles.',
     icon: Megaphone,
     glowColor: 'rgba(245, 158, 11, 0.15)',
     items: [
-      'Social Media Management',
-      'Community & Advocacy Programs',
-      'High-impact Content Creation',
-      'Advanced Content Calendars',
-      'Targeted Advertising Campaigns',
-      'Exponential Growth Strategies'
+      'Gestion des Réseaux Sociaux',
+      'Programmes d\'Ambassadeurs & Communauté',
+      'Création de Contenus à Fort Impact',
+      'Plannings Éditoriaux Avancés',
+      'Campagnes Publicitaires Ciblées',
+      'Stratégies de Croissance Exponentielle'
     ]
   }
 ];
 
 export const TARGET_CLIENTS_DATA = [
-  { name: 'Startups', badge: 'High Growth', description: 'Scale rapidly with institutional-grade products.' },
-  { name: 'Corporate', badge: 'Enterprise', description: 'Modernize heritage structures with custom ERP/CRMs.' },
-  { name: 'Medical Clinics', badge: 'HIPAA Ready', description: 'Patient-centric secure booking and telehealth portals.' },
-  { name: 'Real Estate', badge: 'High Value', description: 'Interactive luxury listings and virtual tours.' },
-  { name: 'Schools', badge: 'Modern Edu', description: 'Collaborative custom Learning Management Systems.' },
-  { name: 'Restaurants', badge: 'Fine Dining', description: 'Premium visual brandkits & fluid online booking.' },
-  { name: 'Personal Brands', badge: 'Premium', description: 'Authority-building thought-leadership web engines.' },
-  { name: 'Small Businesses', badge: 'Local Power', description: 'Unlocking global efficiency with digital transformation.' }
+  { name: 'Startups', badge: 'Forte Croissance', description: 'Développez-vous rapidement avec des produits de qualité institutionnelle.' },
+  { name: 'Entreprises', badge: 'Grandes Comptes', description: 'Modernisez vos structures historiques avec des ERP/CRM sur mesure.' },
+  { name: 'Cliniques Médicales', badge: 'Normes Sécurisées', description: 'Portails de réservation sécurisés et de téléconsultation centrés sur le patient.' },
+  { name: 'Immobilier', badge: 'Haute Valeur', description: 'Annonces de luxe interactives et visites virtuelles immersives.' },
+  { name: 'Écoles & Universités', badge: 'Éducation Moderne', description: 'Systèmes de gestion de l\'apprentissage collaboratifs sur mesure.' },
+  { name: 'Restaurants', badge: 'Gastronomie', description: 'Kits de marque visuels premium et réservation en ligne fluide.' },
+  { name: 'Marques Personnelles', badge: 'Premium', description: 'Moteurs web d\'autorité pour asseoir votre leadership d\'opinion.' },
+  { name: 'PME & Commerces', badge: 'Force Locale', description: 'Libérez votre efficacité globale grâce à la transformation numérique.' }
 ];
 
 export const PROJECTS_DATA: ProjectItem[] = [
   {
-    id: 'aether-capital',
-    title: 'Aether Capital',
-    client: 'Aether Finance Corp.',
-    category: 'Fintech Platform & Branding',
-    clientType: 'Corporate & Startups',
-    description: 'An institutional-grade portfolio dashboard designed to deliver real-time assets monitoring, analytics tracking, and automated trade execution for top-tier capital firms.',
-    challenge: 'Legacy financial platforms are cluttered, slow, and lack cohesive branding, creating high friction for investment managers monitoring multi-million dollar asset pools.',
-    solution: 'We engineered a seamless, military-grade dashboard with high-density data visualization, custom telemetry charts, and a striking, minimal cosmic slate brand identity.',
+    id: 'mrc-community',
+    title: 'Mosta Run Club Community',
+    client: 'Mosta Run Club',
+    category: 'Application Communautaire & Tracking',
+    clientType: 'Sport & Communauté',
+    description: 'L\'application officielle de la communauté Mosta Run Club pour suivre les entraînements de course à pied, gérer les événements hebdomadaires, interagir avec les membres et suivre les statistiques collectives.',
+    challenge: 'Fédérer et connecter de manière ludique et moderne une communauté grandissante de coureurs à travers une plateforme centralisée pour coordonner les sessions de running hebdomadaires.',
+    solution: 'Un hub interactif doté d\'une gestion d\'événements, d\'un mur d\'activité sociale, de suivi de kilomètres et de badges de progression.',
     stats: [
-      { label: 'Latency Reduction', value: '-85%' },
-      { label: 'Active Capital Traded', value: '$2.4B+' },
-      { label: 'Client Trust Rating', value: '99.9%' }
+      { label: 'Membres Actifs', value: '500+' },
+      { label: 'Événements Hebdomadaires', value: '120+' },
+      { label: 'Km Parcourus', value: '15k km+' }
     ],
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'PostgreSQL', 'Node.js'],
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+    gradient: 'from-orange-500/30 to-red-900/40',
+    uiMockupType: 'fintech',
+    link: 'http://mrc-community.vercel.app/'
+  },
+  {
+    id: 'mrc-shop',
+    title: 'Mosta Run Club Shop',
+    client: 'Mosta Run Club',
+    category: 'E-Commerce Premium',
+    clientType: 'Boutique en Ligne',
+    description: 'La boutique en ligne officielle du Mosta Run Club permettant aux coureurs d\'acquérir les équipements officiels, maillots running de haute qualité et accessoires exclusifs de la communauté.',
+    challenge: 'Proposer un processus d\'achat fluide, rapide et immersif mettant en valeur l\'identité visuelle dynamique de la marque MRC.',
+    solution: 'Un site e-commerce moderne et minimaliste optimisé pour mobile avec un parcours utilisateur instantané.',
+    stats: [
+      { label: 'Taux de Conversion', value: '4.8%' },
+      { label: 'Temps de Chargement', value: '0.4s' },
+      { label: 'Commandes Livrées', value: '1,200+' }
+    ],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel', 'Framer Motion'],
     gradient: 'from-blue-600/30 to-indigo-900/40',
-    uiMockupType: 'fintech'
+    uiMockupType: 'dining',
+    link: 'https://mrc-shop.vercel.app/'
   },
   {
-    id: 'apex-health',
-    title: 'Apex Patient Portal',
-    client: 'Apex Medical Networks',
-    category: 'SaaS Platform & UI/UX Design',
-    clientType: 'Medical Clinics & Hospitals',
-    description: 'An integrated telehealth dashboard and clinical scheduler enabling doctors to consult patients safely, review medical records, and issue instant prescriptions.',
-    challenge: 'Medical portals are notoriously complex, presenting severe UX barriers for aged patients and triggering extreme administrative overhead for clinic staff.',
-    solution: 'We designed a hyper-accessible, ADA-compliant user journey backed by secure, state-of-the-art WebRTC audio-visual streaming, achieving effortless one-click care.',
+    id: 'les-bijoux-doran',
+    title: 'Les Bijoux d\'Oran',
+    client: 'Les Bijoux d\'Oran Jewelry',
+    category: 'Vitrine de Luxe & Catalogue Digital',
+    clientType: 'Bijouterie de Luxe',
+    description: 'Une galerie numérique haut de gamme présentant des collections de joaillerie exclusives, de pièces uniques en or et de parures traditionnelles d\'une finesse remarquable.',
+    challenge: 'Transmettre l\'élégance tactile, la brillance et le prestige des pièces de haute joaillerie à travers une expérience numérique épurée.',
+    solution: 'Une interface sombre minimaliste à fort contraste, avec des diaporamas fluides d\'exposition des collections.',
     stats: [
-      { label: 'Appointment Efficiency', value: '+140%' },
-      { label: 'Patient Retention Rate', value: '96.2%' },
-      { label: 'Onboarding Time', value: '< 2 mins' }
+      { label: 'Vues Mensuelles', value: '25,000+' },
+      { label: 'Demandes de Devis', value: '+180%' },
+      { label: 'Satisfaction Client', value: '4.9/5' }
     ],
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion'],
-    gradient: 'from-emerald-500/20 to-teal-900/30',
-    uiMockupType: 'medical'
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    gradient: 'from-amber-500/20 to-stone-900/40',
+    uiMockupType: 'medical',
+    link: 'https://bidjou.vercel.app/'
   },
   {
-    id: 'novus-academy',
-    title: 'Novus Immersive LMS',
-    client: 'Novus Global Education',
-    category: 'Custom E-Learning Web & Brand Guidelines',
-    clientType: 'Schools & Training Institutes',
-    description: 'A revolutionary, bento-grid styled Learning Management System incorporating visual classrooms, automated grading pipelines, and interactive assignments trackers.',
-    challenge: 'Traditional e-learning is boring, flat, and fails to keep students engaged, resulting in low course completion rates across educational institutions.',
-    solution: 'We custom-developed a highly gamified, modular dashboard using micro-animations, progress timelines, and an outstanding visual reward framework.',
+    id: 'ecole-el-nadjah',
+    title: 'École El Nadjah',
+    client: 'École El Nadjah',
+    category: 'Portail Éducatif & LMS',
+    clientType: 'Éducation & Écoles',
+    description: 'Une plateforme d\'apprentissage et de gestion scolaire sur mesure connectant enseignants, élèves et parents avec un suivi de progression et des cours interactifs.',
+    challenge: 'Simplifier la communication administrative de l\'école et donner aux familles un accès sécurisé et simple à toutes les ressources scolaires.',
+    solution: 'Un portail web intuitif sous forme de grille bento facilitant le suivi des notes, des devoirs et du calendrier de l\'école.',
     stats: [
-      { label: 'Student Engagement', value: '+320%' },
-      { label: 'Grade-Book Accuracy', value: '100%' },
-      { label: 'Global Active Students', value: '45,000+' }
+      { label: 'Élèves Connectés', value: '1,500+' },
+      { label: 'Taux d\'Usage Parents', value: '92%' },
+      { label: 'Économie de Papier', value: '100%' }
     ],
     technologies: ['React', 'TypeScript', 'Node.js', 'Firebase', 'Tailwind CSS'],
     gradient: 'from-purple-600/25 to-pink-950/35',
-    uiMockupType: 'education'
+    uiMockupType: 'education',
+    link: 'http://ecole-nadjah.vercel.app/'
   },
   {
-    id: 'le-bistro',
-    title: 'Le Bistro Fine Dining',
-    client: 'Maison Gastronomie Group',
-    category: 'Rebranding & Reservation Engine',
-    clientType: 'Restaurants & Hospitality',
-    description: 'A luxurious interactive visual platform, custom reservation algorithm, and promotional campaign for a three-Michelin-starred fine dining brand.',
-    challenge: 'Premium restaurants require a digital presence that mimics the tactile elegance and luxury of their physical dining rooms, which typical templates fail to convey.',
-    solution: 'We created a high-concept sensory design using gorgeous cinematography, fine typography tracking, elegant transition motions, and a high-performance reservation builder.',
+    id: 'everest-academy',
+    title: 'Everest Academy',
+    client: 'Everest Academy',
+    category: 'Plateforme de Formation Moderne',
+    clientType: 'E-Learning & Formation',
+    description: 'Un espace moderne d\'enseignement interactif proposant des formations ciblées de haut niveau pour libérer le potentiel des étudiants et professionnels.',
+    challenge: 'Offrir une interface d\'apprentissage intuitive et stimulante capable de maintenir l\'engagement des étudiants sur le long terme.',
+    solution: 'Un système de gestion d\'apprentissage immersif en grille bento avec un suivi personnalisé des objectifs de formation.',
     stats: [
-      { label: 'Online Bookings', value: '+210%' },
-      { label: 'Website Retention', value: '3.5 mins' },
-      { label: 'Media Impressions', value: '1.2M+' }
+      { label: 'Formations Suivies', value: '800+' },
+      { label: 'Complétion des Cours', value: '94%' },
+      { label: 'Taux d\'Insertion', value: '89%' }
     ],
-    technologies: ['React', 'Framer Motion', 'Tailwind CSS', 'Vite', 'Media Production'],
-    gradient: 'from-amber-500/10 to-stone-900/40',
-    uiMockupType: 'dining'
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion'],
+    gradient: 'from-teal-600/20 to-emerald-950/30',
+    uiMockupType: 'education',
+    link: 'https://everest-academy-smoky.vercel.app/'
+  },
+  {
+    id: 'bc-clean-service',
+    title: 'BC Clean Service',
+    client: 'BC Clean Service',
+    category: 'SaaS Opérationnel & Services',
+    clientType: 'Services Professionnels',
+    description: 'Une vitrine digitale moderne présentant des services professionnels de nettoyage industriel et résidentiel avec un système de devis et planification instantanés.',
+    challenge: 'Permettre aux entreprises et particuliers de commander, planifier et suivre des services d\'entretien complexes de manière fluide.',
+    solution: 'Une interface claire orientée conversion avec un formulaire d\'estimation de prix instantané et de prise de rendez-vous.',
+    stats: [
+      { label: 'Devis Instantanés', value: '2,400+' },
+      { label: 'Interventions Réussies', value: '1,800+' },
+      { label: 'Rétention Clients', value: '95%' }
+    ],
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    gradient: 'from-blue-500/20 to-cyan-950/30',
+    uiMockupType: 'fintech',
+    link: 'https://bc-clean-service.vercel.app/'
+  },
+  {
+    id: 'rahi9',
+    title: 'Rahi9',
+    client: 'Rahi9 Logistics',
+    category: 'Plateforme de Livraison & Logistique',
+    clientType: 'Distribution & E-Commerce',
+    description: 'Un écosystème de gestion de distribution et de livraison fluide, optimisé pour connecter les livreurs et commerçants avec un suivi en temps réel.',
+    challenge: 'Optimiser la coordination logistique du dernier kilomètre et donner une visibilité totale sur l\'état d\'acheminement des commandes.',
+    solution: 'Un tableau de bord logistique centralisé avec géolocalisation en temps réel et planification de tournées intelligentes.',
+    stats: [
+      { label: 'Livraisons / Jour', value: '1,200+' },
+      { label: 'Temps de Traitement', value: '-40%' },
+      { label: 'Précision d\'Acheminement', value: '99.2%' }
+    ],
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Google Maps API'],
+    gradient: 'from-amber-600/25 to-yellow-950/35',
+    uiMockupType: 'fintech',
+    link: 'https://rahiq-murex.vercel.app/'
   }
 ];
 
 export const PROCESS_DATA: ProcessStep[] = [
   {
     number: '01',
-    title: 'Discovery & Audit',
-    description: 'We begin with an exhaustive deep-dive session. We analyze your target market, map out user personas, audit competing solutions, and establish your precise product goals.',
-    deliverables: ['Competitive Analysis Report', 'Technical Architecture Blueprint', 'Product Scope document']
+    title: 'Découverte & Audit',
+    description: 'Nous commençons par une analyse approfondie. Nous étudions votre marché cible, cartographions les personas d\'utilisateurs, auditons les solutions concurrentes et établissons les objectifs précis de votre produit.',
+    deliverables: ['Rapport d\'Analyse Concurrentielle', 'Plan d\'Architecture Technique', 'Cahier des Charges du Produit']
   },
   {
     number: '02',
-    title: 'Product Strategy',
-    description: 'Aligning business metrics with technical possibilities. We formulate the operational roadmap, detail core feature metrics, and define your brand positioning hypothesis.',
-    deliverables: ['Product Requirement Document (PRD)', 'Site Maps & Information Architecture', 'Brand Positioning map']
+    title: 'Stratégie Produit',
+    description: 'Aligner les objectifs commerciaux avec les possibilités techniques. Nous formulons la feuille de route opérationnelle, détaillons les indicateurs clés et définissons l\'hypothèse de positionnement de votre marque.',
+    deliverables: ['Document d\'Exigences Produit (PRD)', 'Structure & Architecture de l\'Information', 'Plan de Positionnement de Marque']
   },
   {
     number: '03',
-    title: 'High-Fidelity Design',
-    description: 'Where utility meets visual perfection. We create high-fidelity interactive Figma prototypes, develop complete component libraries, and construct custom brand design tokens.',
-    deliverables: ['Interactive UX/UI Mockups', 'Core Design System Spec', 'Ready-to-Animate Assets']
+    title: 'Design Haute Fidélité',
+    description: 'Là où l\'utilité rencontre la perfection visuelle. Nous créons des prototypes interactifs haute fidélité sur Figma, développons des bibliothèques de composants et concevons les chartes graphiques sur mesure.',
+    deliverables: ['Maquettes UX/UI Interactives', 'Système de Design Centralisé', 'Ressources Prêtes pour l\'Animation']
   },
   {
     number: '04',
-    title: 'Precision Development',
-    description: 'Our senior developers build production-ready systems using cutting-edge tech stacks. We implement pixel-perfect Tailwind layouts, robust state trees, and lightning-fast API responses.',
-    deliverables: ['Clean TypeScript Codebase', 'API Endpoints & DB Integrations', 'Staging Deployments']
+    title: 'Développement de Précision',
+    description: 'Nos développeurs seniors conçoivent des systèmes prêts pour la production en utilisant des technologies de pointe. Nous implémentons des mises en page Tailwind au pixel près, des arbres d\'état robustes et des réponses API ultra-rapides.',
+    deliverables: ['Codebase TypeScript Propre', 'Points de Terminaison API & Base de Données', 'Déploiements en Environnement de Staging']
   },
   {
     number: '05',
-    title: 'Quality Assurance & Testing',
-    description: 'Rigorous optimization. We run stress testing, responsiveness audits across 15+ screen sizes, performance optimizations to hit 99+ Lighthouse scores, and cross-browser validations.',
-    deliverables: ['Lighthouse Performance Audits', 'Responsive Cross-Browser Checklist', 'Security Penetration logs']
+    title: 'Assurance Qualité & Tests',
+    description: 'Optimisation rigoureuse. Nous effectuons des tests de montée en charge, des audits de réactivité sur plus de 15 tailles d\'écran, des optimisations de performance pour atteindre un score Lighthouse supérieur à 99 et des validations multi-navigateurs.',
+    deliverables: ['Audits de Performance Lighthouse', 'Liste de Validation Multi-Navigateurs', 'Rapports de Sécurité & Pénétration']
   },
   {
     number: '06',
-    title: 'Launch & Expansion',
-    description: 'Smooth deployment. We release your product to live servers, configure global DNS/CDN routes, launch digital marketing campaigns, and monitor telemetry.',
-    deliverables: ['Production DNS Configuration', 'Analytics Dashboards Setup', 'Media Kit Assets Launch']
+    title: 'Lancement & Déploiement',
+    description: 'Déploiement fluide. Nous mettons votre produit en ligne sur des serveurs sécurisés, configurons les routes DNS/CDN mondiales, lançons les campagnes de marketing numérique et suivons les données télémétriques.',
+    deliverables: ['Configuration DNS de Production', 'Mise en Place des Outils d\'Analyse', 'Lancement du Kit Média & Campagnes']
   },
   {
     number: '07',
-    title: 'Ongoing Support',
-    description: 'We do not just leave. We back our builds with active SLA-managed security updates, routine performance tuning, feature scalability, and direct advisory consulting.',
-    deliverables: ['Priority SLA Channel Access', 'Monthly Performance Optimization', 'Future Roadmap Audits']
+    title: 'Support Continu',
+    description: 'Nous restons à vos côtés. Nous accompagnons nos créations de mises à jour de sécurité sous contrat (SLA), d\'optimisations régulières de performance, d\'évolutivité des fonctionnalités et de conseils stratégiques directs.',
+    deliverables: ['Accès Prioritaire au Canal SLA', 'Optimisation Mensuelle des Performances', 'Audits de Feuille de Route Future']
   }
 ];
 
@@ -300,40 +362,40 @@ export const TECHNOLOGIES_DATA: TechnologyItem[] = [
 
 export const WHY_CHOOSE_US_DATA = [
   {
-    title: 'Fast Delivery',
-    description: 'Highly streamlined sprint cycles and modular codebases ensure rapid deployment without ever sacrificing quality.',
+    title: 'Livraison Rapide',
+    description: 'Des cycles de sprint rationalisés et des bases de code modulaires garantissent un déploiement rapide sans jamais sacrifier la qualité.',
     icon: Zap,
-    stat: 'Average 30-Day Turnaround'
+    stat: 'Délai Moyen de 30 Jours'
   },
   {
-    title: 'Premium Design',
-    description: 'We eschew templates. Every pixel, custom animation, and micro-interaction is custom-designed to match your exact aesthetic tier.',
+    title: 'Design Premium',
+    description: 'Nous bannissons les modèles génériques. Chaque pixel, animation personnalisée et micro-interaction est conçu sur mesure pour correspondre à votre niveau d\'exigence esthétique.',
     icon: Sparkles,
-    stat: 'Award-Winning UI/UX Quality'
+    stat: 'Qualité UI/UX Récompensée'
   },
   {
-    title: 'Custom Solutions',
-    description: 'No generic widgets. We write bespoke algorithms, custom database schemas, and tailored integrations for your unique operations.',
+    title: 'Solutions sur Mesure',
+    description: 'Pas de widgets génériques. Nous écrivons des algorithmes sur mesure, des schémas de base de données personnalisés et des intégrations adaptées à vos opérations uniques.',
     icon: Layers,
-    stat: 'Zero Pre-Packaged Hacks'
+    stat: 'Zéro Solution Pré-packagée'
   },
   {
-    title: 'Long-term Support',
+    title: 'Support à Long Terme',
     description: 'We serve as your technical partner, keeping code updated, servers scaled, and interfaces optimized as your operations grow.',
     icon: HeartHandshake,
-    stat: '98% Client Retention Rate'
+    stat: 'Taux de Rétention Client de 98%'
   },
   {
-    title: 'Transparent Communication',
-    description: 'Access active Slack channels, real-time Jira trackers, and direct visual demos every week. No hidden surprises.',
+    title: 'Communication Transparente',
+    description: 'Accédez à des canaux Slack actifs, à des suivis Jira en temps réel et à des démonstrations visuelles directes chaque semaine. Aucune mauvaise surprise.',
     icon: Workflow,
-    stat: 'Weekly Visual Demos'
+    stat: 'Démos Visuelles Hebdomadaires'
   },
   {
-    title: 'Scalable Architecture',
-    description: 'We construct systems with modular, clean-layered TS patterns ready to easily absorb million-user scaling loads.',
+    title: 'Architecture Évolutive',
+    description: 'Nous construisons des systèmes avec des modèles de conception TypeScript modulaires et structurés, prêts à absorber des charges de plusieurs millions d\'utilisateurs.',
     icon: Gauge,
-    stat: 'Lighthouse 99+ Readiness'
+    stat: 'Optimisé Lighthouse 99+'
   }
 ];
 
@@ -341,37 +403,37 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
   {
     id: 'test-1',
     name: 'Sarah Jenkins',
-    role: 'Managing Partner',
+    role: 'Associée Gérante',
     company: 'Aether Finance Corp.',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    text: 'EverestX delivered a financial dashboard that exceeded our expectations. Our clients are amazed by the 85% reduction in latency and the pristine dark interface. They are a world-class engineering force.',
+    text: 'EverestX a livré un tableau de bord financier qui a dépassé nos attentes. Nos clients sont impressionnés par la réduction de 85 % de la latence et l\'interface sombre soignée. C\'est une équipe d\'ingénierie de classe mondiale.',
     rating: 5
   },
   {
     id: 'test-2',
     name: 'Dr. Marcus Vance',
-    role: 'Chief Medical Officer',
+    role: 'Directeur Médical en Chef',
     company: 'Apex Medical Networks',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    text: 'Patient care requires extreme attention to detail, and EverestX mirrored that level of care in our patient scheduler. UX complaints dropped to absolute zero, and clinic efficiency spiked overnight.',
+    text: 'Les soins aux patients exigent une attention extrême aux détails, et EverestX a reflété ce niveau d\'exigence dans notre planificateur médical. Les retours négatifs sur l\'expérience utilisateur ont totalement disparu et l\'efficacité de la clinique a grimpé en flèche.',
     rating: 5
   },
   {
     id: 'test-3',
     name: 'Helena Rostov',
-    role: 'Director of Learning Products',
+    role: 'Directrice des Produits d\'Apprentissage',
     company: 'Novus Global Education',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    text: 'Our engagement metrics skyrocketed by 320% after launching the Novus LMS designed by EverestX. The custom animations are fluid and addicting. They are truly creative masterminds.',
+    text: 'Nos indicateurs d\'engagement ont bondi de 320 % après le lancement du LMS Novus conçu par EverestX. Les animations personnalisées sont fluides et captivantes. Ce sont de véritables esprits créatifs.',
     rating: 5
   },
   {
     id: 'test-4',
     name: 'David Chang',
-    role: 'Executive Chef & Owner',
+    role: 'Chef Exécutif & Propriétaire',
     company: 'Maison Gastronomie Group',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    text: 'The reservation website is a masterpiece of visual gastronomy. It mimics our three-star fine dining service digitally. Booking volume increased by 210% in the first two weeks alone.',
+    text: 'Le site de réservation est un chef-d\'œuvre de gastronomie visuelle. Il transpose numériquement l\'élégance de notre service trois étoiles. Le volume de réservations a augmenté de 210 % dès les deux premières semaines.',
     rating: 5
   }
 ];
@@ -379,27 +441,27 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
 export const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'How long does a typical project take from discovery to launch?',
-    answer: 'While custom corporate websites can be deployed within 3 to 4 weeks, complex custom ERP/CRM systems and massive Web/Mobile applications typically require 6 to 12 weeks of detailed engineering sprints. We establish a firm delivery schedule during the Strategy phase.'
+    question: 'Combien de temps prend un projet typique, de la découverte au lancement ?',
+    answer: 'Bien que des sites web d\'entreprise puissent être déployés en 3 à 4 semaines, des systèmes ERP/CRM complexes sur mesure et de grandes applications Web/Mobiles nécessitent généralement 6 à 12 semaines d\'ingénierie détaillée. Nous établissons un calendrier de livraison ferme dès la phase de stratégie.'
   },
   {
     id: 'faq-2',
-    question: 'Will I have direct access to the team during development?',
-    answer: 'Absolutely. You will be matched with a dedicated Product Lead, and gain direct access to a private Slack channel with our engineers and designers. We provide weekly video screencasts and direct clickable staging links so you can witness progression live.'
+    question: 'Aurai-je un accès direct à l\'équipe pendant le développement ?',
+    answer: 'Absolument. Vous serez mis en relation avec un chef de produit dédié et bénéficierez d\'un accès direct à un canal Slack privé avec nos ingénieurs et designers. Nous fournissons des démonstrations vidéo hebdomadaires et des liens d\'accès direct pour suivre l\'avancement en temps réel.'
   },
   {
     id: 'faq-3',
-    question: 'Do you design everything from scratch, or do you use pre-made templates?',
-    answer: 'Every line of code, design pattern, UI card, and motion curve is created 100% from scratch by our senior team. We believe standard templates look generic and degrade brand credibility. We custom-engineer layouts to guarantee your brand commands absolute category authority.'
+    question: 'Concevez-vous tout à partir de zéro ou utilisez-vous des modèles prédéfinis ?',
+    answer: 'Chaque ligne de code, modèle de design, carte d\'interface et courbe d\'animation est créée à 100 % à partir de zéro par notre équipe senior. Nous pensons que les modèles standard semblent génériques et nuisent à la crédibilité d\'une marque. Nous concevons des mises en page sur mesure pour garantir à votre entreprise une autorité absolue sur son marché.'
   },
   {
     id: 'faq-4',
-    question: 'How do you handle hosting, scaling, and server-side maintenance?',
-    answer: 'We configure and deploy your products onto serverless architectures (Vercel, AWS, Google Cloud Cloud Run) to minimize maintenance and guarantee near-infinite scaling out-of-the-box. We also offer SLA-backed monthly maintenance contracts covering routine updates, backups, security patches, and SEO auditing.'
+    question: 'Comment gérez-vous l\'hébergement, l\'évolutivité et la maintenance des serveurs ?',
+    answer: 'Nous configurons et déployons vos produits sur des architectures serverless (Vercel, AWS, Google Cloud Run) afin de minimiser la maintenance et de garantir une évolutivité quasi-infinie dès le départ. Nous proposons également des contrats de maintenance mensuelle sous contrat (SLA) couvrant les mises à jour, sauvegardes, correctifs de sécurité et audits SEO.'
   },
   {
     id: 'faq-5',
-    question: 'What is your billing structure for custom development?',
-    answer: 'We operate on a transparent fixed-price milestone model based on approved product specifications. You pay upon successful verification of specific project milestones (e.g. UX/UI Sign-off, Alpha Build, Final Launch). There are no hidden hourly fees.'
+    question: 'Quelle est votre structure de facturation pour les développements sur mesure ?',
+    answer: 'Nous fonctionnons sur un modèle transparent de prix fixe par étape (milestone) basé sur les spécifications validées du produit. Vous payez après validation réussie de chaque étape clé du projet (Validation UI/UX, Version Alpha, Lancement Final). Il n\'y a pas de frais horaires cachés.'
   }
 ];

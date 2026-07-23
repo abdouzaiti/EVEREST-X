@@ -27,6 +27,15 @@
   50% { transform: translateY(12px); }
 }
 
+@keyframes fsh-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -47,10 +56,14 @@
 }
 
 /* Base html and body styles to completely prevent horizontal overflow on mobile browsers */
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   background-color: #000000;
   color: #ffffff;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -233,4 +246,37 @@ html, body {
     transform: translateY(0);
   }
 }
+
+/* Frame Sequence Hero - Updated for Screenshot Layout */
+.fsh-root { position: relative; width: 100%; }
+.fsh-loader { position: fixed; inset: 0; z-index: 100; background: #fff; display: flex; align-items: center; justify-content: center; }
+.fsh-loader-done { opacity: 0; pointer-events: none; transition: opacity 0.5s; }
+.fsh-loader-text { font-family: var(--font-mono); color: #000; }
+.fsh-loader-track { width: 200px; height: 2px; background: #e5e5e5; }
+.fsh-loader-fill { height: 100%; background: #000; display: block; }
+.fsh-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 20px; transition: background 0.3s; }
+.fsh-nav-scrolled { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); }
+.fsh-stage { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding: 40px 0; }
+.fsh-canvas-wrap { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; flex-grow: 1; width: 100%; }
+.fsh-canvas { max-width: 80%; max-height: 70%; object-fit: contain; }
+.fsh-copy { position: relative; z-index: 10; text-align: center; margin-top: 40px; }
+.fsh-title { font-size: 6rem; color: #1f2937; font-weight: 800; letter-spacing: -0.05em; }
+.fsh-sub { font-size: 1.25rem; color: #6b7280; margin-top: 10px; }
+.fsh-sub-hidden { opacity: 0; transition: opacity 0.3s; }
+.fsh-cards { position: absolute; bottom: 40px; left: 40px; width: 400px; z-index: 10; }
+.fsh-card { background: rgba(255, 255, 255, 0.95); border-radius: 24px; padding: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid rgba(229, 231, 235, 1); }
+.fsh-card-active { display: block; }
+.fsh-card:not(.fsh-card-active) { display: none; }
+.fsh-card-inner { display: flex; flex-direction: column; }
+.fsh-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.fsh-card-num { font-family: var(--font-mono); font-size: 14px; font-weight: 500; }
+.fsh-card-icon { width: 32px; height: 32px; background: #fb923c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.fsh-card-title { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.fsh-card-desc { font-size: 16px; color: #6b7280; margin-bottom: 24px; }
+.fsh-card-foot { display: flex; align-items: center; gap: 16px; }
+.fsh-ticks { flex: 1; height: 4px; background: #e5e5e5; border-radius: 2px; overflow: hidden; display: flex; }
+.fsh-tick { flex: 1; height: 100%; }
+.fsh-tick span { display: block; height: 100%; background: #fb923c; }
+.fsh-card-label { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: #6b7280; }
+.fsh-spacer { width: 100%; }
 

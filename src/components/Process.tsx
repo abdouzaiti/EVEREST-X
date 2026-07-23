@@ -20,13 +20,13 @@ export default function Process() {
         {/* Section Header */}
         <div className="max-w-3xl mb-24">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20">
-            04 // STRATEGIC METHODOLOGY
+            04 // MÉTHODOLOGIE STRATÉGIQUE
           </span>
           <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
-            Our 7-Step Precision Engineering Lifecycle.
+            Notre Cycle de Développement en 7 Étapes de Précision.
           </h2>
           <p className="text-brand-gray text-base font-light mt-4 max-w-xl">
-            We do not skip steps. We manage your product through an exhaustive lifecycle designed to deliver bulletproof performance and ultimate design prestige.
+            Nous ne sautons aucune étape. Nous gérons votre produit à travers un cycle complet conçu pour offrir des performances à toute épreuve et un design prestigieux.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function Process() {
           {/* Left Column: Staggered Timeline Steps Selector (Interactive Sidebar) */}
           <div className="lg:col-span-4 space-y-3" id="process-steps-sidebar">
             <span className="text-[10px] font-mono text-brand-dark-gray uppercase tracking-widest block mb-4">
-              CHOOSE A LIFECYCLE PHASE
+              CHOISISSEZ UNE PHASE DU CYCLE
             </span>
             {PROCESS_DATA.map((step, idx) => {
               const isActive = activeStep === idx;
@@ -93,11 +93,11 @@ export default function Process() {
                       </span>
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-accent" />
                       <span className="text-[9px] font-mono text-brand-dark-gray uppercase tracking-widest">
-                        METICULOUS WORKFLOW
+                        PROCESSUS MÉTICULEUX
                       </span>
                     </div>
                     <span className="bg-brand-success/10 border border-brand-success/20 text-brand-success text-[8px] px-2 py-0.5 rounded font-mono uppercase tracking-wider">
-                      SLA COMPLIANT
+                      CONFORME SLA
                     </span>
                   </div>
 
@@ -113,7 +113,7 @@ export default function Process() {
                 {/* Deliverables List Block */}
                 <div>
                   <h4 className="text-[10px] font-mono text-white tracking-wider uppercase mb-3.5">
-                    DELIVERABLES LOGGED AT KEYSTONE
+                    LIVRABLES SPÉCIFIQUES INCLUS
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {PROCESS_DATA[activeStep].deliverables.map((item, i) => (
@@ -132,10 +132,10 @@ export default function Process() {
 
                 {/* Progress bar representational */}
                 <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-brand-dark-gray">
-                  <span>STEP {activeStep + 1} OF 7 IN EXECUTION FLOW</span>
+                  <span>ÉTAPE {activeStep + 1} SUR 7 DU PROCESSUS D'EXÉCUTION</span>
                   <div className="flex items-center gap-1">
                     <span className="text-brand-accent font-semibold">
-                      {Math.round(((activeStep + 1) / 7) * 100)}% THROUGHPUT
+                      {Math.round(((activeStep + 1) / 7) * 100)}% COMPLÉTÉ
                     </span>
                   </div>
                 </div>

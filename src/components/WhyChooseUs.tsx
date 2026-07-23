@@ -17,13 +17,13 @@ export default function WhyChooseUs() {
         {/* Section Header */}
         <div className="max-w-3xl mb-24">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20">
-            06 // COMPETITIVE EDGE
+            06 // AVANTAGES CONCURRENTIELS
           </span>
           <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
-            Why Leading Innovators Choose EVERESTX.
+            Pourquoi les leaders de l'innovation choisissent EVERESTX.
           </h2>
           <p className="text-brand-gray text-base font-light mt-4 max-w-xl">
-            We operate with a high level of operational discipline. We do not compromise on code, architecture, scheduling, or visual fidelity.
+            Nous fonctionnons avec une discipline opérationnelle rigoureuse. Nous ne faisons aucun compromis sur le code, l'architecture, les délais ou la fidélité visuelle.
           </p>
         </div>
 

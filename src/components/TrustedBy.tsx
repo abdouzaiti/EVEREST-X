@@ -2,12 +2,12 @@ import { motion } from 'motion/react';
 
 export default function TrustedBy() {
   const clients = [
-    { name: 'AETHER CAPITAL', subtitle: 'FINANCIAL' },
-    { name: 'APEX HEALTH', subtitle: 'CLINICAL' },
-    { name: 'NOVUS ACADEMY', subtitle: 'EDUCATION' },
-    { name: 'MAISON GASTRONOMIE', subtitle: 'DINING' },
-    { name: 'LUMEN REALTY', subtitle: 'ESTATES' },
-    { name: 'VERTEX CORPS', subtitle: 'ENTERPRISE' },
+    { name: 'MOSTA RUN CLUB', subtitle: 'PARTENAIRE' },
+    { name: 'LES BIJOUX D\'ORAN', subtitle: 'PARTENAIRE' },
+    { name: 'ECOLE EL NADJAH', subtitle: 'PARTENAIRE' },
+    { name: 'EVEREST ACADEMY', subtitle: 'PARTENAIRE' },
+    { name: 'BC CLEAN SERVICE', subtitle: 'PARTENAIRE' },
+    { name: 'RAHI9', subtitle: 'PARTENAIRE' },
   ];
 
   return (
@@ -19,7 +19,7 @@ export default function TrustedBy() {
         
         {/* Caption */}
         <p className="text-[10px] font-mono tracking-widest text-brand-dark-gray uppercase mb-8">
-          TRUSTED BY LEADING ENTERPRISES, FAST-GROWING STARTUPS, AND INFLUENTIAL PERSONAL BRANDS
+          APPROUVÉ PAR LES ENTREPRISES LEADERS, LES STARTUPS EN PLEINE CROISSANCE ET LES MARQUES PERSONNELLES INFLUENTES
         </p>
 
         {/* Client Wall Grid */}

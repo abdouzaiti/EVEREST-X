@@ -1,6 +1,6 @@
 {
   "name": "EverestX Digital Agency",
-  "description": "Premium digital agency helping businesses transform ideas into modern digital products and strong brands through software development, creative design, and branding.",
+  "description": "Agence digitale premium aidant les entreprises à transformer leurs idées en produits numériques modernes et marques fortes grâce au développement de logiciels et au design créatif.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

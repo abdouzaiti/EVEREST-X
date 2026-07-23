@@ -8,11 +8,22 @@ export default function Technologies() {
 
   const categories = [
     { id: 'all', label: 'Full Stack', icon: Cpu },
-    { id: 'frontend', label: 'Frontend', icon: Globe },
-    { id: 'backend', label: 'Backend', icon: Layers },
-    { id: 'database-infra', label: 'Cloud & Database', icon: Database },
-    { id: 'mobile-desktop', label: 'Native Apps', icon: Smartphone }
+    { id: 'frontend', label: 'Front-end', icon: Globe },
+    { id: 'backend', label: 'Back-end', icon: Layers },
+    { id: 'database-infra', label: 'Cloud & BDD', icon: Database },
+    { id: 'mobile-desktop', label: 'Apps Natives', icon: Smartphone }
   ];
+
+  const getCategoryLabel = (cat: string) => {
+    switch (cat) {
+      case 'frontend': return 'Front-end';
+      case 'backend': return 'Back-end';
+      case 'database-infra': return 'Base de Données & Infra';
+      case 'mobile-desktop': return 'Applications Natives';
+      case 'design-motion': return 'Design & Animation';
+      default: return cat;
+    }
+  };
 
   const filteredTech = activeCategory === 'all' 
     ? TECHNOLOGIES_DATA 
@@ -32,13 +43,13 @@ export default function Technologies() {
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20">
-            05 // ARCHITECTURAL TECH STACK
+            05 // STACK TECHNIQUE D'ÉLITE
           </span>
           <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
-            Our Elite Technical Stack.
+            Notre Stack Technique d'Élite.
           </h2>
           <p className="text-brand-gray text-base font-light mt-4 max-w-xl">
-            We use only modern, standardized, and ultra-high-performance technologies that ensure scaling, security, and absolute maintainability.
+            Nous utilisons uniquement des technologies modernes, standardisées et ultra-performantes qui garantissent l'évolutivité, la sécurité et une maintenabilité absolue.
           </p>
         </div>
 
@@ -86,14 +97,14 @@ export default function Technologies() {
                   {tech.name}
                 </span>
                 <span className="block text-[8px] font-mono text-brand-dark-gray uppercase tracking-widest mt-0.5">
-                  {tech.category.replace('-', ' ')}
+                  {getCategoryLabel(tech.category)}
                 </span>
               </div>
 
               {/* Skill Proficiency bar */}
               <div className="mt-6 space-y-1.5">
                 <div className="flex justify-between text-[8px] font-mono text-brand-gray/80">
-                  <span>EXPERT COMPETENCY</span>
+                  <span>NIVEAU DE MAÎTRISE</span>
                   <span className="text-white font-bold">{tech.proficiency}%</span>
                 </div>
                 <div className="h-1 w-full bg-brand-primary rounded-full overflow-hidden border border-white/5">

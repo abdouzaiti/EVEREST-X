@@ -161,23 +161,12 @@ export default function Footer({ onStartProject }: FooterProps) {
               <span>Start Your Project</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
-            <span className="block text-[8px] font-mono text-brand-dark-gray uppercase tracking-widest text-center">
-              EST. 2026 // ALL RIGHTS RESERVED
-            </span>
+
           </div>
 
         </div>
 
-        {/* Bottom copyright block */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono text-brand-dark-gray">
-          <span>
-            © {currentYear} EVERESTX PREMIUM AGENCY. METICULOUS SOFTWARE DEVELOPMENT & VISUAL DESIGN SYSTEMS.
-          </span>
-          <div className="flex gap-4">
-            <a href="#privacy" className="hover:text-brand-gray transition-colors">PRIVACY CODE</a>
-            <a href="#terms" className="hover:text-brand-gray transition-colors">TERMS OF COMPLIANCE</a>
-          </div>
-        </div>
+
 
       </div>
     </footer>

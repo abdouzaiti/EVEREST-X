@@ -25,11 +25,11 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
+    { id: 'hero', label: 'Accueil' },
+    { id: 'about', label: 'À Propos' },
     { id: 'services', label: 'Services' },
-    { id: 'projects', label: 'Case Studies' },
-    { id: 'process', label: 'Our Process' },
+    { id: 'projects', label: 'Projets' },
+    { id: 'process', label: 'Notre Processus' },
     { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -127,7 +127,7 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
             >
               <span className="relative z-10 text-white flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5 text-brand-accent animate-pulse" />
-                Start Your Project
+                Lancer Votre Projet
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -198,11 +198,11 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
                 id="mobile-start-project-btn"
               >
                 <Sparkles className="w-4 h-4 text-white" />
-                Start Your Project
+                Lancer Votre Projet
                 <ArrowUpRight className="w-4 h-4" />
               </button>
               <div className="text-center text-[10px] font-mono text-brand-dark-gray uppercase tracking-widest">
-                EVERESTX Agency • Create. Grow. Elevate.
+                Agence EVERESTX • Créer. Grandir. Élever.
               </div>
             </motion.div>
           </motion.div>

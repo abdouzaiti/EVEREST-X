@@ -13,7 +13,6 @@ import FeaturedProjects from './components/FeaturedProjects';
 import Process from './components/Process';
 import Technologies from './components/Technologies';
 import WhyChooseUs from './components/WhyChooseUs';
-import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -97,7 +96,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-brand-primary min-h-screen text-white relative font-sans selection:bg-brand-accent selection:text-white w-full max-w-full overflow-x-hidden" id="everestx-root">
+    <div className="bg-brand-primary min-h-screen text-white relative font-sans selection:bg-brand-accent selection:text-white w-full max-w-full" id="everestx-root">
       {/* Immersive Custom Cursor */}
       <CustomCursor />
 
@@ -145,9 +144,6 @@ export default function App() {
 
       {/* Why Choose EverestX Advantages */}
       <WhyChooseUs />
-
-      {/* Testimonials */}
-      <Testimonials />
 
       {/* FAQ Accordions */}
       <FAQ />

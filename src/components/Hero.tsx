@@ -35,7 +35,7 @@ interface CosmicParallaxBgProps {
  */
 const CosmicParallaxBg: React.FC<CosmicParallaxBgProps> = ({
   head = "EVERESTX",
-  text = "CREATE, GROW, ELEVATE",
+  text = "CRÉER, GRANDIR, ÉLEVER",
   className = '',
   onStartProject,
   onViewPortfolio,
@@ -82,7 +82,7 @@ const CosmicParallaxBg: React.FC<CosmicParallaxBgProps> = ({
           className="mt-6 text-sm sm:text-base md:text-lg text-brand-gray font-light leading-relaxed max-w-2xl z-10 animate-fade"
           id="hero-paragraph"
         >
-          EVERESTX helps ambitious businesses transform bold ideas into industry-leading digital products, high-end applications, and memorable global brands.
+          EVERESTX aide les entreprises ambitieuses à transformer leurs idées audacieuses en produits numériques de pointe, applications haut de gamme et marques mondiales mémorables.
         </motion.p>
 
         {/* CTA Group */}
@@ -99,7 +99,7 @@ const CosmicParallaxBg: React.FC<CosmicParallaxBgProps> = ({
               className="px-8 py-4 rounded-xl text-xs sm:text-sm font-semibold tracking-wider text-black bg-brand-accent hover:bg-zinc-200 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer focus:outline-none"
               id="hero-cta-start-project"
             >
-              Start Your Project
+              Lancer Votre Projet
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           )}
@@ -110,7 +110,7 @@ const CosmicParallaxBg: React.FC<CosmicParallaxBgProps> = ({
               id="hero-cta-view-portfolio"
             >
               <Play className="w-4 h-4 text-white fill-white/10" />
-              View Portfolio
+              Voir le Portfolio
             </button>
           )}
         </motion.div>

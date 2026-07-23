@@ -28,13 +28,13 @@ export default function FAQ() {
         {/* Section Header */}
         <div className="text-center mb-20">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20 inline-block">
-            08 // OPERATIONAL DISCLOSURES
+            08 // RENSEIGNEMENTS OPÉRATIONNELS
           </span>
           <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
-            Frequently Asked Queries.
+            Questions Fréquemment Posées.
           </h2>
           <p className="text-brand-gray text-base font-light mt-4 max-w-xl mx-auto">
-            Clear, transparent answers on our deliverables, timelines, access, and service levels.
+            Des réponses claires et transparentes sur nos livrables, nos délais, nos accès et nos niveaux de service.
           </p>
         </div>
 

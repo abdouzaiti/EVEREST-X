@@ -25,14 +25,14 @@ export default function Services({ onSelectService }: ServicesProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
           <div className="max-w-xl">
             <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-brand-secondary px-3.5 py-1.5 rounded-full border border-brand-accent/20">
-              02 // ADVANCED CAPABILITIES
+              02 // COMPÉTENCES AVANCÉES
             </span>
             <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
-              Enterprise-grade digital solutions, tailored to your operations.
+              Solutions numériques de classe entreprise, adaptées à vos opérations.
             </h2>
           </div>
           <p className="text-brand-gray text-sm sm:text-base font-light max-w-sm md:mb-2">
-            Every service is custom-executed by senior operators with absolute commitment to code excellence, user engagement, and visual authority.
+            Chaque service est exécuté sur mesure par des experts seniors avec un engagement absolu envers l'excellence du code, l'engagement utilisateur et l'autorité visuelle.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function Services({ onSelectService }: ServicesProps) {
                       </li>
                     ))}
                     <li className="text-[10px] text-brand-accent font-semibold tracking-wider font-mono">
-                      + {service.items.length - 4} MORE SPECIALIZATIONS
+                      + {service.items.length - 4} AUTRES SPÉCIALISATIONS
                     </li>
                   </ul>
                 </div>
@@ -90,7 +90,7 @@ export default function Services({ onSelectService }: ServicesProps) {
                 {/* Learn More Trigger */}
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between group-hover:border-brand-accent/20 transition-colors">
                   <span className="text-xs font-semibold tracking-wider text-brand-gray group-hover:text-white transition-colors uppercase font-mono">
-                    Explore Details
+                    Explorer les Détails
                   </span>
                   <div className="w-8 h-8 rounded-full bg-brand-secondary/80 border border-white/5 flex items-center justify-center text-brand-gray group-hover:text-white group-hover:bg-brand-accent/20 group-hover:border-brand-accent/30 transition-all duration-300">
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -118,11 +118,11 @@ export default function Services({ onSelectService }: ServicesProps) {
               </div>
 
               <h3 className="text-xl font-bold text-white tracking-tight font-sans mb-3">
-                Need a Custom Architectural Solution?
+                Besoin d'une Solution Architecturale sur Mesure ?
               </h3>
 
               <p className="text-xs text-brand-gray font-light leading-relaxed mb-6">
-                Have a massive product vision requiring integrated mobile apps, high-concurrency API backends, and brand guidelines? Let our creative directors engineer your custom roadmap.
+                Vous avez une vision de produit d'envergure nécessitant des applications mobiles intégrées, des backends d'API à forte concurrence et des chartes de marque ? Laissez nos directeurs artistiques concevoir votre feuille de route personnalisée.
               </p>
             </div>
 
@@ -131,7 +131,7 @@ export default function Services({ onSelectService }: ServicesProps) {
               className="w-full py-3 rounded-xl bg-brand-accent hover:bg-zinc-200 text-xs font-semibold tracking-wider text-black transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer focus:outline-none"
               id="services-bento-cta-btn"
             >
-              Consult with Creative Directors
+              Consulter nos Directeurs Artistiques
               <ArrowUpRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
           </motion.div>
@@ -188,7 +188,7 @@ export default function Services({ onSelectService }: ServicesProps) {
                   </div>
                   <div>
                     <span className="text-[10px] font-mono tracking-widest text-brand-accent uppercase">
-                      SERVICE SECTOR LOGS
+                      FICHE DÉTAILLÉE DU SERVICE
                     </span>
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-sans">
                       {activeModalService.title}
@@ -203,7 +203,7 @@ export default function Services({ onSelectService }: ServicesProps) {
 
                 {/* Full deliverables grid list */}
                 <h4 className="text-xs font-mono text-white tracking-wider uppercase mb-4 border-b border-white/5 pb-2">
-                  Specialized Deliverables included
+                  Livrables spécialisés inclus
                 </h4>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8" id="modal-deliverables-list">
@@ -225,14 +225,14 @@ export default function Services({ onSelectService }: ServicesProps) {
                     className="w-full sm:flex-1 py-4 rounded-xl bg-brand-accent hover:bg-zinc-200 text-xs font-semibold tracking-wider text-black transition-all duration-200 cursor-pointer focus:outline-none"
                     id="service-modal-cta-inquire"
                   >
-                    Select & Start Inquiry
+                    Sélectionner & Commencer
                   </button>
                   <button
                     onClick={() => setActiveModalService(null)}
                     className="w-full sm:w-auto px-6 py-4 rounded-xl bg-brand-primary hover:bg-brand-primary/80 border border-white/5 text-xs font-semibold tracking-wider text-brand-gray hover:text-white transition-all focus:outline-none"
                     id="service-modal-cta-close"
                   >
-                    Close Specs
+                    Fermer
                   </button>
                 </div>
               </div>
