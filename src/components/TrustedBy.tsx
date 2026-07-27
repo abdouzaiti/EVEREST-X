@@ -24,12 +24,12 @@ export default function TrustedBy({ theme }: TrustedByProps) {
   return (
     <section 
       id="trusted-by" 
-      className="py-16 bg-brand-primary border-y border-brand-secondary relative overflow-hidden"
+      className="py-10 bg-brand-primary border-y border-brand-secondary relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 text-center">
         
         {/* Caption */}
-        <p className="text-[10px] font-mono tracking-widest text-brand-dark-gray uppercase mb-12">
+        <p className="text-[10px] font-mono tracking-widest text-brand-dark-gray uppercase mb-8">
           APPROUVÉ PAR LES ENTREPRISES LEADERS ET LES MARQUES EN PLEINE CROISSANCE
         </p>
 

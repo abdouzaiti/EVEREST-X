@@ -89,7 +89,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
   return (
     <section 
       id="contact" 
-      className="py-32 bg-brand-primary relative overflow-hidden border-t border-brand-secondary/60"
+      className="py-16 bg-brand-primary relative overflow-hidden border-t border-brand-secondary/60"
     >
       {/* Decorative Blur Backgrounds */}
       <div className="glow-bg bottom-[-10%] right-[-10%] opacity-20" />
@@ -98,7 +98,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-12">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20">
             09 // PROTOCOLE DE COLLABORATION
           </span>

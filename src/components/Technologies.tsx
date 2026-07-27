@@ -32,7 +32,7 @@ export default function Technologies() {
   return (
     <section 
       id="technologies" 
-      className="py-32 bg-brand-primary relative overflow-hidden border-t border-brand-secondary/60"
+      className="py-16 bg-brand-primary relative overflow-hidden border-t border-brand-secondary/60"
     >
       {/* Visual glowing highlights */}
       <div className="glow-bg top-[25%] left-[-10%] opacity-15" />
@@ -41,7 +41,7 @@ export default function Technologies() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-12">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-brand-secondary px-3.5 py-1.5 rounded-full border border-brand-accent/20">
             05 // STACK TECHNIQUE D'ÉLITE
           </span>

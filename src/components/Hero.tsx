@@ -51,7 +51,7 @@ const CosmicParallaxBg: React.FC<CosmicParallaxBgProps> = ({
       </div>
       
       {/* Centered Content Wrapper */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl w-full pt-20">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl w-full pt-10">
 
 
         {/* Title and subtitle */}

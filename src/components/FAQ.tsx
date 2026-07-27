@@ -17,7 +17,7 @@ export default function FAQ() {
   return (
     <section 
       id="faq" 
-      className="py-32 bg-brand-primary relative overflow-hidden border-t border-brand-secondary/60"
+      className="py-16 bg-brand-primary relative overflow-hidden border-t border-brand-secondary/60"
     >
       {/* Glow Backlights */}
       <div className="glow-bg top-[30%] right-[-10%] opacity-10 animate-pulse-slow" />
@@ -26,7 +26,7 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-brand-secondary px-3.5 py-1.5 rounded-full border border-brand-accent/20 inline-block">
             08 // RENSEIGNEMENTS OPÉRATIONNELS
           </span>

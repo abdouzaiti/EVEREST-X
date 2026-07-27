@@ -33,7 +33,7 @@ export default function Footer({ onStartProject, theme }: FooterProps) {
   };
 
   return (
-    <footer className="bg-brand-primary border-t border-brand-secondary/80 py-16 px-6 relative overflow-hidden">
+    <footer className="bg-brand-primary border-t border-brand-secondary/80 py-12 px-6 relative overflow-hidden">
       
       {/* Subtle backglow */}
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />

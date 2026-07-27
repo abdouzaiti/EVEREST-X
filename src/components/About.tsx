@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section 
       id="about" 
-      className="pt-32 pb-12 bg-brand-primary relative overflow-hidden"
+      className="pt-16 pb-10 bg-brand-primary relative overflow-hidden"
     >
       {/* Decorative Orbs */}
       <div className="glow-bg-purple bottom-[10%] left-[-10%] opacity-20" />
@@ -14,7 +14,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-12">
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-brand-secondary px-3.5 py-1.5 rounded-full border border-brand-accent/20">
             01 // PRÉSENTATION D'EVERESTX
           </span>
