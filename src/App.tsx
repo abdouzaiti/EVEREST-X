@@ -25,6 +25,27 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isEstimatorOpen, setIsEstimatorOpen] = useState(false);
   const [prefilledContext, setPrefilledContext] = useState('');
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('everestx-theme');
+      return (saved as 'dark' | 'light') || 'dark';
+    }
+    return 'dark';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'light') {
+      root.classList.add('light');
+    } else {
+      root.classList.remove('light');
+    }
+    localStorage.setItem('everestx-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   // Scrollspy logic to automatically update navigation indicators
   useEffect(() => {
@@ -96,7 +117,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-brand-primary min-h-screen text-white relative font-sans selection:bg-brand-accent selection:text-white w-full max-w-full" id="everestx-root">
+    <div className="bg-brand-primary min-h-screen text-brand-text relative font-sans selection:bg-brand-accent selection:text-brand-primary w-full max-w-full" id="everestx-root">
       {/* Immersive Custom Cursor */}
       <CustomCursor />
 
@@ -112,6 +133,8 @@ export default function App() {
       <Navbar 
         onStartProject={handleStartProjectBtn} 
         activeSection={activeSection} 
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
 
       {/* Hero Visual Section */}
@@ -156,6 +179,7 @@ export default function App() {
       {/* Footer Branding and Compliance */}
       <Footer 
         onStartProject={handleStartProjectBtn} 
+        theme={theme}
       />
 
       {/* Multi-Step Estimator Modal Overlay */}

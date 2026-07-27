@@ -102,7 +102,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20">
             09 // PROTOCOLE DE COLLABORATION
           </span>
-          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-brand-text tracking-tight mt-6 leading-tight">
             Élevez votre présence numérique. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">Créons quelque chose d'iconique.</span>
           </h2>
@@ -116,7 +116,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
           
           {/* Left Side: Modern Form Container */}
           <div className="lg:col-span-7" id="contact-form-container">
-            <div className="bg-[#101828]/50 border border-white/5 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+            <div className="bg-brand-secondary/50 border border-brand-border rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
               
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
@@ -142,7 +142,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="ex. Sarah Jenkins"
-                          className="w-full bg-brand-primary/80 border border-white/5 focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors"
+                          className="w-full bg-brand-primary/80 border border-brand-border focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-brand-text focus:outline-none transition-colors"
                         />
                       </div>
 
@@ -159,7 +159,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="sarah@aether.capital"
-                          className="w-full bg-brand-primary/80 border border-white/5 focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors"
+                          className="w-full bg-brand-primary/80 border border-brand-border focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-brand-text focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -177,7 +177,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                           value={formData.company}
                           onChange={handleChange}
                           placeholder="Aether Finance Corp"
-                          className="w-full bg-brand-primary/80 border border-white/5 focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors"
+                          className="w-full bg-brand-primary/80 border border-brand-border focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-brand-text focus:outline-none transition-colors"
                         />
                       </div>
 
@@ -191,10 +191,10 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                           name="budget"
                           value={formData.budget}
                           onChange={handleChange}
-                          className="w-full bg-brand-primary/80 border border-white/5 focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors appearance-none"
+                          className="w-full bg-brand-primary/80 border border-brand-border focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-brand-text focus:outline-none transition-colors appearance-none"
                         >
                           {budgets.map(b => (
-                            <option key={b} value={b} className="bg-brand-secondary text-white">{b}</option>
+                            <option key={b} value={b} className="bg-brand-secondary text-brand-text">{b}</option>
                           ))}
                         </select>
                       </div>
@@ -212,7 +212,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Parlez-nous de vos clients cibles, de vos livrables, de vos délais..."
-                        className="w-full bg-brand-primary/80 border border-white/5 focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors resize-none"
+                        className="w-full bg-brand-primary/80 border border-brand-border focus:border-brand-accent rounded-xl px-4 py-3 text-sm text-brand-text focus:outline-none transition-colors resize-none"
                       />
                     </div>
 
@@ -276,7 +276,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
           <div className="lg:col-span-5 space-y-6" id="contact-telemetry-container">
             
             {/* Geolocation Clock card */}
-            <div className="bg-[#101828]/50 border border-white/5 p-6 rounded-2xl relative overflow-hidden flex flex-col justify-between h-[200px] group hover:border-brand-accent/35 transition-colors duration-300">
+            <div className="bg-brand-secondary/50 border border-brand-border p-6 rounded-2xl relative overflow-hidden flex flex-col justify-between h-[200px] group hover:border-brand-accent/35 transition-colors duration-300">
               {/* Backglow */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/5 rounded-full blur-2xl pointer-events-none" />
 
@@ -284,7 +284,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                 <span className="text-[10px] font-mono text-brand-dark-gray uppercase tracking-widest block mb-1">
                   COORDONNÉES OFFICIELLES
                 </span>
-                <span className="font-sans font-bold text-base text-white block">
+                <span className="font-sans font-bold text-base text-brand-text block">
                   Everest <span className="text-blue-400 font-black inline-block ml-0.5 scale-110">X</span>
                 </span>
                 <span className="text-xs text-brand-gray block mt-0.5 font-light">
@@ -292,10 +292,10 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
                 </span>
               </div>
 
-              <div className="flex justify-between items-end border-t border-white/5 pt-4">
+              <div className="flex justify-between items-end border-t border-brand-border pt-4">
                 <div>
                   <span className="block text-[9px] font-mono text-brand-dark-gray uppercase">HEURE DE L'ÉQUIPE</span>
-                  <span className="text-xl sm:text-2xl font-bold font-mono text-white mt-1 block">
+                  <span className="text-xl sm:text-2xl font-bold font-mono text-brand-text mt-1 block">
                     {currentTime || '12:00:00'}
                   </span>
                 </div>
@@ -353,7 +353,7 @@ export default function Contact({ prefilledContext = '' }: ContactProps) {
             {/* Interactive Geolocation Map Container */}
             <div className="bg-[#101828]/50 border border-white/5 rounded-2xl relative overflow-hidden h-[240px] flex flex-col justify-end group hover:border-brand-accent/30 transition-all duration-300" id="contact-map-container">
               {/* Actual Google Maps Embed Iframe */}
-              <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-300 filter grayscale invert contrast-125">
+              <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-300 filter grayscale contrast-125">
                 <iframe
                   title="Everest Academy Location Map"
                   src="https://maps.google.com/maps?q=35.9219764,0.0904564&t=m&z=14&ie=UTF8&iwloc=&output=embed"

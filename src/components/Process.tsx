@@ -19,10 +19,10 @@ export default function Process() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-24">
-          <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20">
+          <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-brand-secondary px-3.5 py-1.5 rounded-full border border-brand-accent/20">
             04 // MÉTHODOLOGIE STRATÉGIQUE
           </span>
-          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-brand-text tracking-tight mt-6 leading-tight">
             Notre Cycle de Développement en 7 Étapes de Précision.
           </h2>
           <p className="text-brand-gray text-base font-light mt-4 max-w-xl">
@@ -46,8 +46,8 @@ export default function Process() {
                   onClick={() => setActiveStep(idx)}
                   className={`w-full text-left p-4 rounded-xl border transition-all duration-300 flex items-center gap-4 focus:outline-none ${
                     isActive 
-                      ? 'bg-brand-secondary border-brand-accent text-white shadow-lg shadow-brand-accent/10' 
-                      : 'bg-brand-secondary/20 border-white/5 text-brand-gray hover:text-white hover:border-white/10'
+                      ? 'bg-brand-secondary border-brand-accent text-brand-text shadow-lg shadow-brand-accent/10' 
+                      : 'bg-brand-secondary/20 border-brand-border text-brand-gray hover:text-brand-text hover:border-brand-border'
                   }`}
                   id={`process-sidebar-btn-${idx}`}
                 >
@@ -78,7 +78,7 @@ export default function Process() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
-                className="bg-[#101828]/60 border border-white/5 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden min-h-[400px] flex flex-col justify-between"
+                className="bg-brand-secondary/60 border border-brand-border rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden min-h-[400px] flex flex-col justify-between"
                 id="process-active-card"
               >
                 {/* Backglow linked to step */}
@@ -86,7 +86,7 @@ export default function Process() {
 
                 {/* Card Top Block */}
                 <div>
-                  <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-6">
+                  <div className="flex items-center justify-between border-b border-brand-border pb-4 mb-6">
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-lg font-bold text-brand-accent">
                         PHASE_{PROCESS_DATA[activeStep].number}
@@ -101,7 +101,7 @@ export default function Process() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3.5xl font-extrabold text-white tracking-tight font-sans mb-4">
+                  <h3 className="text-2xl sm:text-3.5xl font-extrabold text-brand-text tracking-tight font-sans mb-4">
                     {PROCESS_DATA[activeStep].title}
                   </h3>
 

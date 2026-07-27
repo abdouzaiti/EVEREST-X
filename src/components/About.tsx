@@ -18,53 +18,50 @@ export default function About() {
           <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-brand-secondary px-3.5 py-1.5 rounded-full border border-brand-accent/20">
             01 // PRÉSENTATION D'EVERESTX
           </span>
-          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-brand-text tracking-tight mt-6 leading-tight">
             Nous existons à l'intersection de l'<span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">excellence technique</span> et du design haut de gamme.
           </h2>
         </div>
 
         {/* Narrative & Mission Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Slogan & Story Column */}
-          <div className="lg:col-span-7 space-y-6 text-brand-gray text-base leading-relaxed font-light">
-            <p className="text-white text-lg font-medium">
-              Nous ne concevons pas de modèles génériques. Nous ne recyclons pas d'idées. Nous concevons et développons des écosystèmes numériques sur mesure qui rendent vos concurrents obsolètes.
-            </p>
-            <p>
-              Fondé avec une mission unique — élever les marques à leur sommet technologique ultime — EVERESTX intervient en tant que cabinet d'élite en design et développement de logiciels. Nous nous associons à des startups ambitieuses, des cliniques prestigieuses, des écoles de premier plan, des restaurants et des multinationales pour débloquer une croissance exponentielle grâce à l'innovation numérique.
-            </p>
-            <p>
-              En fusionnant l'informatique pure et un design créatif conceptuel, nous garantissons que votre logiciel est non seulement ultra-rapide et hautement sécurisé, mais aussi magnifiquement immersif.
+          <div className="space-y-8">
+            <div className="relative">
+              <div className="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-brand-accent to-transparent opacity-50" />
+              <p className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold text-brand-text leading-tight tracking-tight">
+                Nous ne concevons pas de modèles génériques. Nous ne recyclons pas d'idées. Nous bâtissons des <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">écosystèmes numériques</span> qui redéfinissent votre avantage concurrentiel.
+              </p>
+            </div>
+            
+            <p className="text-brand-gray text-lg font-light leading-relaxed max-w-xl">
+              Chaque ligne de code est une décision stratégique. Chaque pixel est une intention de marque. Nous fusionnons l'ingénierie de précision avec une esthétique de luxe pour propulser les leaders vers leur sommet.
             </p>
           </div>
 
           {/* Mission & Vision Column */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             
             {/* Mission Card */}
-            <div className="bg-brand-secondary/60 border border-white/5 p-6 rounded-2xl backdrop-blur-sm hover:border-brand-accent/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-brand-accent" />
-                </div>
-                <h3 className="text-white font-semibold font-sans">Notre Mission</h3>
+            <div className="group bg-brand-secondary/40 border border-brand-border p-8 rounded-3xl backdrop-blur-md hover:border-brand-accent/40 transition-all duration-500 hover:translate-y-[-4px]">
+              <div className="w-12 h-12 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <Target className="w-6 h-6 text-brand-accent" />
               </div>
+              <h3 className="text-brand-text text-xl font-bold font-sans mb-4 tracking-tight">Notre Mission</h3>
               <p className="text-sm text-brand-gray font-light leading-relaxed">
-                Permettre aux entreprises mondiales de se développer en fournissant des produits numériques méticuleusement conçus, des architectures d'entreprise robustes et des identités visuelles de prestige.
+                Permettre aux entreprises mondiales de se développer en fournissant des produits numériques méticuleusement conçus et des identités visuelles de prestige.
               </p>
             </div>
 
             {/* Vision Card */}
-            <div className="bg-brand-secondary/60 border border-white/5 p-6 rounded-2xl backdrop-blur-sm hover:border-brand-accent/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
-                  <Eye className="w-5 h-5 text-purple-400" />
-                </div>
-                <h3 className="text-white font-semibold font-sans">Notre Vision</h3>
+            <div className="group bg-brand-secondary/40 border border-brand-border p-8 rounded-3xl backdrop-blur-md hover:border-brand-accent/40 transition-all duration-500 hover:translate-y-[-4px] sm:mt-8">
+              <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <Eye className="w-6 h-6 text-purple-400" />
               </div>
+              <h3 className="text-brand-text text-xl font-bold font-sans mb-4 tracking-tight">Notre Vision</h3>
               <p className="text-sm text-brand-gray font-light leading-relaxed">
-                Être le partenaire mondial de référence en matière de rupture numérique premium, en établissant la norme d'excellence pour l'artisanat logiciel, la réactivité opérationnelle et le branding visuel.
+                Être le partenaire mondial de référence en matière de rupture numérique premium, en établissant la norme d'excellence pour l'artisanat logiciel.
               </p>
             </div>
 

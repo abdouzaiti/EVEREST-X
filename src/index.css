@@ -5,16 +5,45 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand-primary: #000000;
-  --color-brand-secondary: #0a0a0a;
-  --color-brand-accent: #ffffff;
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
   --color-brand-success: #10b981;
-  --color-brand-gray: #a1a1aa;
-  --color-brand-dark-gray: #52525b;
+  --color-brand-gray: var(--brand-gray);
+  --color-brand-dark-gray: var(--brand-dark-gray);
+  --color-brand-text: var(--brand-text);
+  --color-brand-border: var(--brand-border);
+  --color-brand-nav-bg: var(--brand-nav-bg);
   
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-delayed: float-delayed 8s ease-in-out infinite;
+}
+
+:root {
+  --brand-primary: #000000;
+  --brand-secondary: #0a0a0a;
+  --brand-accent: #ffffff;
+  --brand-gray: #a1a1aa;
+  --brand-dark-gray: #52525b;
+  --brand-text: #ffffff;
+  --brand-border: rgba(255, 255, 255, 0.1);
+  --brand-nav-bg: rgba(0, 0, 0, 0.8);
+  --hero-gradient: radial-gradient(ellipse at bottom, #050811 0%, #000000 100%);
+  --star-opacity: 1;
+}
+
+.light {
+  --brand-primary: #ffffff;
+  --brand-secondary: #f4f4f5;
+  --brand-accent: #000000;
+  --brand-gray: #52525b;
+  --brand-dark-gray: #a1a1aa;
+  --brand-text: #000000;
+  --brand-border: rgba(0, 0, 0, 0.1);
+  --brand-nav-bg: rgba(255, 255, 255, 0.8);
+  --hero-gradient: radial-gradient(ellipse at bottom, #f0f9ff 0%, #ffffff 100%);
+  --star-opacity: 0.15;
 }
 
 @keyframes float {
@@ -43,16 +72,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--brand-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: var(--brand-dark-gray);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: var(--brand-gray);
 }
 
 /* Base html and body styles to completely prevent horizontal overflow on mobile browsers */
@@ -61,8 +90,8 @@ html {
 }
 
 html, body {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--brand-primary);
+  color: var(--brand-text);
   overflow-x: clip;
   width: 100%;
   max-width: 100%;
@@ -99,7 +128,7 @@ html, body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: radial-gradient(ellipse at bottom, #050811 0%, #000000 100%);
+  background: var(--hero-gradient);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -119,6 +148,7 @@ html, body {
   pointer-events: none;
   animation: animStar 60s linear infinite;
   z-index: 1;
+  opacity: var(--star-opacity);
 }
 
 .cosmic-stars-medium {
@@ -131,6 +161,7 @@ html, body {
   pointer-events: none;
   animation: animStar 120s linear infinite;
   z-index: 1;
+  opacity: var(--star-opacity);
 }
 
 .cosmic-stars-large {
@@ -143,6 +174,7 @@ html, body {
   pointer-events: none;
   animation: animStar 180s linear infinite;
   z-index: 1;
+  opacity: var(--star-opacity);
 }
 
 @keyframes animStar {

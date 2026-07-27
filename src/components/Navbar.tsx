@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles, Sun, Moon } from 'lucide-react';
 
 interface NavbarProps {
   onStartProject: () => void;
   activeSection: string;
+  theme: 'dark' | 'light';
+  onToggleTheme: () => void;
 }
 
-export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
+export default function Navbar({ onStartProject, activeSection, theme, onToggleTheme }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoError, setLogoError] = useState(false);
@@ -60,7 +62,7 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-brand-primary/80 backdrop-blur-md border-b border-brand-secondary py-4 shadow-lg shadow-brand-primary/20' 
+            ? 'bg-brand-nav-bg backdrop-blur-md border-b border-brand-border py-4 shadow-lg' 
             : 'bg-transparent py-6 border-b border-transparent'
         }`}
       >
@@ -75,13 +77,13 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
               <img 
                 src="/logo.png" 
                 alt="EVERESTX Logo" 
-                className="h-[60px] md:h-[72px] w-auto object-contain transition-transform group-hover:scale-105" 
+                className={`h-[60px] md:h-[72px] w-auto object-contain transition-transform group-hover:scale-105 ${theme === 'light' ? 'invert hue-rotate-180' : ''}`} 
                 referrerPolicy="no-referrer"
                 onError={() => setLogoError(true)}
               />
             ) : (
               <div className="relative w-11 h-11 flex items-center justify-center rounded-xl bg-gradient-to-tr from-brand-accent to-blue-500 overflow-hidden shadow-md shadow-brand-accent/20 transition-transform group-hover:scale-105">
-                <div className="absolute inset-[1.5px] bg-[#080F19] rounded-[10px] flex items-center justify-center">
+                <div className="absolute inset-[1.5px] bg-brand-primary rounded-[10px] flex items-center justify-center">
                   {/* SVG double peak mountain styled representing EVERESTX */}
                   <svg className="w-6 h-6 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 20l7-14 4 8 2-4 5 10H3z" />
@@ -93,7 +95,7 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
           </button>
 
           {/* Desktop Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-brand-secondary/40 backdrop-blur-sm border border-brand-secondary/80 p-1.5 rounded-full" id="desktop-nav">
+          <nav className="hidden md:flex items-center gap-1 bg-brand-secondary/40 backdrop-blur-sm border border-brand-border p-1.5 rounded-full" id="desktop-nav">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -101,7 +103,7 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
                   key={link.id}
                   onClick={() => handleScrollTo(link.id)}
                   className={`relative px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-colors duration-200 focus:outline-none ${
-                    isActive ? 'text-white' : 'text-brand-gray hover:text-white'
+                    isActive ? 'text-brand-text' : 'text-brand-gray hover:text-brand-text'
                   }`}
                   id={`nav-link-${link.id}`}
                 >
@@ -109,7 +111,7 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
                     <motion.span
                       layoutId="activeTab"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                      className="absolute inset-0 bg-brand-accent/15 border border-brand-accent/30 rounded-full"
+                      className="absolute inset-0 bg-brand-accent/10 border border-brand-accent/20 rounded-full"
                     />
                   )}
                   {link.label}
@@ -120,12 +122,21 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
 
           {/* CTA & Actions */}
           <div className="hidden md:flex items-center gap-4" id="desktop-nav-cta">
+            {/* Theme Toggle Button */}
+            <button
+              onClick={onToggleTheme}
+              className="p-2.5 rounded-xl bg-brand-secondary border border-brand-border text-brand-text hover:border-brand-accent transition-all duration-300 focus:outline-none"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+
             <button
               onClick={onStartProject}
               className="relative px-5 py-2 rounded-xl text-xs font-medium tracking-wider group overflow-hidden bg-brand-secondary border border-brand-accent/20 hover:border-brand-accent transition-all duration-300 focus:outline-none"
               id="nav-start-project-btn"
             >
-              <span className="relative z-10 text-white flex items-center gap-2">
+              <span className="relative z-10 text-brand-text flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5 text-brand-accent animate-pulse" />
                 Lancer Votre Projet
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -135,14 +146,23 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
           </div>
 
           {/* Mobile Menu Trigger */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-brand-secondary/60 border border-brand-secondary text-white hover:text-brand-accent transition-colors focus:outline-none"
-            aria-label="Toggle menu"
-            id="mobile-nav-toggle"
-          >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={onToggleTheme}
+              className="p-2.5 rounded-xl bg-brand-secondary/60 border border-brand-border text-brand-text hover:text-brand-accent transition-colors focus:outline-none"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-secondary/60 border border-brand-border text-brand-text hover:text-brand-accent transition-colors focus:outline-none"
+              aria-label="Toggle menu"
+              id="mobile-nav-toggle"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </motion.header>
 
@@ -170,7 +190,7 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
                   transition={{ delay: idx * 0.05 }}
                   key={link.id}
                   onClick={() => handleScrollTo(link.id)}
-                  className="text-left py-2 border-b border-brand-secondary/40 text-lg font-medium text-brand-gray hover:text-white transition-colors focus:outline-none flex items-center justify-between"
+                  className="text-left py-2 border-b border-brand-border/40 text-lg font-medium text-brand-gray hover:text-brand-text transition-colors focus:outline-none flex items-center justify-between"
                   id={`mobile-nav-link-${link.id}`}
                 >
                   <span>{link.label}</span>
@@ -194,10 +214,10 @@ export default function Navbar({ onStartProject, activeSection }: NavbarProps) {
                   setIsOpen(false);
                   onStartProject();
                 }}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-accent to-blue-600 text-sm font-semibold tracking-wider text-white flex items-center justify-center gap-2 focus:outline-none shadow-lg shadow-brand-accent/20"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-accent to-blue-600 text-sm font-semibold tracking-wider text-brand-primary flex items-center justify-center gap-2 focus:outline-none shadow-lg shadow-brand-accent/20"
                 id="mobile-start-project-btn"
               >
-                <Sparkles className="w-4 h-4 text-white" />
+                <Sparkles className="w-4 h-4 text-brand-primary" />
                 Lancer Votre Projet
                 <ArrowUpRight className="w-4 h-4" />
               </button>

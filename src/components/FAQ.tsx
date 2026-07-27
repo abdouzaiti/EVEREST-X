@@ -27,10 +27,10 @@ export default function FAQ() {
         
         {/* Section Header */}
         <div className="text-center mb-20">
-          <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-[#101828] px-3.5 py-1.5 rounded-full border border-brand-accent/20 inline-block">
+          <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-brand-secondary px-3.5 py-1.5 rounded-full border border-brand-accent/20 inline-block">
             08 // RENSEIGNEMENTS OPÉRATIONNELS
           </span>
-          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-brand-text tracking-tight mt-6 leading-tight">
             Questions Fréquemment Posées.
           </h2>
           <p className="text-brand-gray text-base font-light mt-4 max-w-xl mx-auto">
@@ -45,7 +45,7 @@ export default function FAQ() {
             return (
               <div
                 key={faq.id}
-                className="bg-[#101828]/50 border border-white/5 rounded-2xl overflow-hidden hover:border-brand-accent/35 transition-colors duration-300"
+                className="bg-brand-secondary/50 border border-brand-border rounded-2xl overflow-hidden hover:border-brand-accent/35 transition-colors duration-300"
                 id={`faq-node-${faq.id}`}
               >
                 {/* Header Toggle */}
@@ -56,11 +56,11 @@ export default function FAQ() {
                 >
                   <div className="flex items-center gap-3.5">
                     <HelpCircle className="w-5 h-5 text-brand-accent flex-shrink-0 opacity-60" />
-                    <span className="font-sans font-bold text-sm sm:text-base text-white">
+                    <span className="font-sans font-bold text-sm sm:text-base text-brand-text">
                       {faq.question}
                     </span>
                   </div>
-                  <div className={`w-8 h-8 rounded-full bg-brand-primary/80 border border-white/5 flex items-center justify-center text-brand-gray transition-transform duration-300 ${
+                  <div className={`w-8 h-8 rounded-full bg-brand-primary/80 border border-brand-border flex items-center justify-center text-brand-gray transition-transform duration-300 ${
                     isOpen ? 'rotate-180 text-brand-accent border-brand-accent/30 bg-brand-accent/10' : ''
                   }`}>
                     <ChevronDown className="w-4 h-4" />

@@ -55,8 +55,8 @@ const CosmicParallaxBg: React.FC<CosmicParallaxBgProps> = ({
 
 
         {/* Title and subtitle */}
-        <div id="title" className="!bg-none !text-white flex items-baseline justify-center select-none">
-          <span className="bg-gradient-to-b from-white to-white/45 bg-clip-text text-transparent">
+        <div id="title" className="!bg-none !text-brand-text flex items-baseline justify-center select-none">
+          <span className="bg-gradient-to-b from-brand-text to-brand-text/45 bg-clip-text text-transparent">
             {head.toUpperCase().endsWith('X') ? head.toUpperCase().slice(0, -1) : head.toUpperCase()}
           </span>
           {head.toUpperCase().endsWith('X') && (
@@ -96,7 +96,7 @@ const CosmicParallaxBg: React.FC<CosmicParallaxBgProps> = ({
           {onStartProject && (
             <button
               onClick={onStartProject}
-              className="px-8 py-4 rounded-xl text-xs sm:text-sm font-semibold tracking-wider text-black bg-brand-accent hover:bg-zinc-200 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer focus:outline-none"
+              className="px-8 py-4 rounded-xl text-xs sm:text-sm font-semibold tracking-wider text-brand-primary bg-brand-accent hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer focus:outline-none"
               id="hero-cta-start-project"
             >
               Lancer Votre Projet
@@ -106,10 +106,10 @@ const CosmicParallaxBg: React.FC<CosmicParallaxBgProps> = ({
           {onViewPortfolio && (
             <button
               onClick={onViewPortfolio}
-              className="px-8 py-4 rounded-xl text-xs sm:text-sm font-semibold tracking-wider text-brand-gray hover:text-white bg-transparent hover:bg-white/5 border border-white/10 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer focus:outline-none"
+              className="px-8 py-4 rounded-xl text-xs sm:text-sm font-semibold tracking-wider text-brand-gray hover:text-brand-text bg-transparent hover:bg-brand-accent/5 border border-brand-border transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer focus:outline-none"
               id="hero-cta-view-portfolio"
             >
-              <Play className="w-4 h-4 text-white fill-white/10" />
+              <Play className="w-4 h-4 text-brand-accent fill-brand-accent/10" />
               Voir le Portfolio
             </button>
           )}

@@ -27,7 +27,7 @@ export default function Services({ onSelectService }: ServicesProps) {
             <span className="text-xs font-mono font-bold tracking-widest text-brand-accent uppercase bg-brand-secondary px-3.5 py-1.5 rounded-full border border-brand-accent/20">
               02 // COMPÉTENCES AVANCÉES
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-white tracking-tight mt-6 leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-sans font-extrabold text-brand-text tracking-tight mt-6 leading-tight">
               Solutions numériques de classe entreprise, adaptées à vos opérations.
             </h2>
           </div>
@@ -88,11 +88,11 @@ export default function Services({ onSelectService }: ServicesProps) {
                 </div>
 
                 {/* Learn More Trigger */}
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between group-hover:border-brand-accent/20 transition-colors">
-                  <span className="text-xs font-semibold tracking-wider text-brand-gray group-hover:text-white transition-colors uppercase font-mono">
+                <div className="pt-4 border-t border-brand-border flex items-center justify-between group-hover:border-brand-accent/20 transition-colors">
+                  <span className="text-xs font-semibold tracking-wider text-brand-gray group-hover:text-brand-text transition-colors uppercase font-mono">
                     Explorer les Détails
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-brand-secondary/80 border border-white/5 flex items-center justify-center text-brand-gray group-hover:text-white group-hover:bg-brand-accent/20 group-hover:border-brand-accent/30 transition-all duration-300">
+                  <div className="w-8 h-8 rounded-full bg-brand-secondary/80 border border-brand-border flex items-center justify-center text-brand-gray group-hover:text-brand-text group-hover:bg-brand-accent/20 group-hover:border-brand-accent/30 transition-all duration-300">
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export default function Services({ onSelectService }: ServicesProps) {
                 <Sparkles className="w-5 h-5 text-brand-accent animate-pulse" />
               </div>
 
-              <h3 className="text-xl font-bold text-white tracking-tight font-sans mb-3">
+              <h3 className="text-xl font-bold text-brand-text tracking-tight font-sans mb-3">
                 Besoin d'une Solution Architecturale sur Mesure ?
               </h3>
 

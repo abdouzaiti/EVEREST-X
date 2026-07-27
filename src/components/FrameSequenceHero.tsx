@@ -764,9 +764,9 @@ export function FrameSequenceHero({
     // Set direct continuous light background color on the entire scroll track container
     <div
       ref={containerRef}
-      className={cx("fsh-root relative w-full bg-[#f6f7f9] text-slate-900 border-b border-brand-secondary/40", className)}
+      className={cx("fsh-root relative w-full bg-brand-primary text-brand-text border-b border-brand-border", className)}
       style={{
-        background: "radial-gradient(circle at 50% 50%, #ffffff 0%, #f6f7f9 100%)",
+        background: "var(--hero-gradient)",
       }}
     >
       {/* Transparent overlay for scroll track */}
@@ -776,19 +776,19 @@ export function FrameSequenceHero({
       <div
         className="fsh-stage w-full h-screen sticky top-0 flex flex-col items-center justify-between py-6 sm:py-8 px-4 sm:px-6 overflow-hidden"
         style={{
-          background: "radial-gradient(circle at 50% 50%, #ffffff 0%, #f6f7f9 100%)",
+          background: "var(--hero-gradient)",
         }}
       >
         {/* Celestial Copy (Title / Subtitle at top of sticky stage) */}
         {(title || subtitle) && (
           <div className="fsh-copy flex flex-col items-center text-center mt-12 z-20 pointer-events-none">
             {title && (
-              <h1 className="fsh-title text-4xl sm:text-6xl md:text-7xl font-sans font-extrabold tracking-tight text-slate-900">
+              <h1 className="fsh-title text-4xl sm:text-6xl md:text-7xl font-sans font-extrabold tracking-tight text-brand-text">
                 {title}
               </h1>
             )}
             {subtitle && (
-              <p className={cx("fsh-sub text-sm sm:text-lg text-slate-500 font-medium tracking-wide mt-2 transition-all duration-300", subHidden && "fsh-sub-hidden opacity-0")}>
+              <p className={cx("fsh-sub text-sm sm:text-lg text-brand-gray font-medium tracking-wide mt-2 transition-all duration-300", subHidden && "fsh-sub-hidden opacity-0")}>
                 {subtitle}
               </p>
             )}
@@ -908,22 +908,22 @@ export function FrameSequenceHero({
                   exit={{ opacity: 0, y: -20, scale: 0.96 }}
                   transition={{ duration: 0.28, ease: "easeOut" }}
                   style={{ ["--c" as any]: steps[activeIdx].color }}
-                  className="bg-white/95 rounded-[24px] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-slate-200/80 backdrop-blur-md flex flex-col"
+                  className="bg-brand-secondary/95 rounded-[24px] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-brand-border backdrop-blur-md flex flex-col"
                 >
                   <div className="fsh-card-inner">
                     <div className="fsh-card-head flex justify-between items-center mb-4">
-                      <span className="fsh-card-num font-mono text-xs font-semibold text-slate-500">
-                        <strong className="text-slate-900 text-sm">{steps[activeIdx].num}</strong> / {steps[activeIdx].total}
+                      <span className="fsh-card-num font-mono text-xs font-semibold text-brand-dark-gray">
+                        <strong className="text-brand-text text-sm">{steps[activeIdx].num}</strong> / {steps[activeIdx].total}
                       </span>
-                      <span className="w-8 h-8 rounded-full bg-slate-950 text-white flex items-center justify-center text-xs shadow-sm font-bold">
+                      <span className="w-8 h-8 rounded-full bg-brand-accent text-brand-primary flex items-center justify-center text-xs shadow-sm font-bold">
                         ✦
                       </span>
                     </div>
 
-                    <h3 className="fsh-card-title text-xl sm:text-2xl font-sans font-extrabold text-slate-900 tracking-tight mb-2">
+                    <h3 className="fsh-card-title text-xl sm:text-2xl font-sans font-extrabold text-brand-text tracking-tight mb-2">
                       {steps[activeIdx].title}
                     </h3>
-                    <p className="fsh-card-desc text-xs sm:text-sm text-slate-500 leading-relaxed mb-6">
+                    <p className="fsh-card-desc text-xs sm:text-sm text-brand-gray leading-relaxed mb-6">
                       {steps[activeIdx].description}
                     </p>
 
@@ -933,7 +933,7 @@ export function FrameSequenceHero({
                           href={steps[activeIdx].link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-950 text-white rounded-xl text-xs font-semibold hover:bg-slate-850 transition-all duration-200 shadow-sm hover:shadow"
+                          className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-accent text-brand-primary rounded-xl text-xs font-semibold hover:opacity-90 transition-all duration-200 shadow-sm hover:shadow"
                         >
                           Visiter le site
                           <ArrowUpRight size={14} />

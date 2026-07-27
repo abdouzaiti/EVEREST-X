@@ -3,9 +3,10 @@ import { ArrowUpRight, Github, Twitter, Linkedin, Sparkles } from 'lucide-react'
 
 interface FooterProps {
   onStartProject: () => void;
+  theme: 'dark' | 'light';
 }
 
-export default function Footer({ onStartProject }: FooterProps) {
+export default function Footer({ onStartProject, theme }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const [logoError, setLogoError] = useState(false);
 
@@ -52,7 +53,7 @@ export default function Footer({ onStartProject }: FooterProps) {
               <img 
                 src="/logo.png" 
                 alt="EVERESTX Logo" 
-                className="h-[60px] md:h-[72px] w-auto object-contain transition-transform group-hover:scale-105" 
+                className={`h-[60px] md:h-[72px] w-auto object-contain transition-transform group-hover:scale-105 ${theme === 'light' ? 'invert hue-rotate-180' : ''}`} 
                 referrerPolicy="no-referrer"
                 onError={() => setLogoError(true)}
               />
@@ -92,27 +93,27 @@ export default function Footer({ onStartProject }: FooterProps) {
 
           {/* Links Column 1 */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-[10px] font-mono text-white tracking-widest uppercase">
+            <h4 className="text-[10px] font-mono text-brand-text tracking-widest uppercase">
               STRUCTURED MAP
             </h4>
             <ul className="space-y-2 text-xs font-light text-brand-gray">
               <li>
-                <button onClick={() => handleScrollTo('about')} className="hover:text-white transition-colors">
+                <button onClick={() => handleScrollTo('about')} className="hover:text-brand-text transition-colors">
                   Agency Intro
                 </button>
               </li>
               <li>
-                <button onClick={() => handleScrollTo('services')} className="hover:text-white transition-colors">
+                <button onClick={() => handleScrollTo('services')} className="hover:text-brand-text transition-colors">
                   Capabilities
                 </button>
               </li>
               <li>
-                <button onClick={() => handleScrollTo('projects')} className="hover:text-white transition-colors">
+                <button onClick={() => handleScrollTo('projects')} className="hover:text-brand-text transition-colors">
                   Case Studies
                 </button>
               </li>
               <li>
-                <button onClick={() => handleScrollTo('process')} className="hover:text-white transition-colors">
+                <button onClick={() => handleScrollTo('process')} className="hover:text-brand-text transition-colors">
                   Process Spec
                 </button>
               </li>
@@ -121,27 +122,22 @@ export default function Footer({ onStartProject }: FooterProps) {
 
           {/* Links Column 2 */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-[10px] font-mono text-white tracking-widest uppercase">
+            <h4 className="text-[10px] font-mono text-brand-text tracking-widest uppercase">
               TRUST ENVELOPE
             </h4>
             <ul className="space-y-2 text-xs font-light text-brand-gray">
               <li>
-                <button onClick={() => handleScrollTo('why-choose-us')} className="hover:text-white transition-colors">
+                <button onClick={() => handleScrollTo('why-choose-us')} className="hover:text-brand-text transition-colors">
                   Strategic Edge
                 </button>
               </li>
               <li>
-                <button onClick={() => handleScrollTo('testimonials')} className="hover:text-white transition-colors">
-                  Testimonials
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleScrollTo('faq')} className="hover:text-white transition-colors">
+                <button onClick={() => handleScrollTo('faq')} className="hover:text-brand-text transition-colors">
                   Disclosures & FAQ
                 </button>
               </li>
               <li>
-                <button onClick={() => handleScrollTo('contact')} className="hover:text-white transition-colors">
+                <button onClick={() => handleScrollTo('contact')} className="hover:text-brand-text transition-colors">
                   Inquire Blueprint
                 </button>
               </li>
@@ -150,12 +146,12 @@ export default function Footer({ onStartProject }: FooterProps) {
 
           {/* Slogan block CTA */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-[10px] font-mono text-white tracking-widest uppercase">
+            <h4 className="text-[10px] font-mono text-brand-text tracking-widest uppercase">
               INITIATE VENTURE
             </h4>
             <button
               onClick={onStartProject}
-              className="w-full py-3.5 rounded-xl bg-brand-secondary border border-brand-accent/20 hover:border-brand-accent hover:bg-[#101828] text-xs font-semibold text-white tracking-wider flex items-center justify-center gap-2 transition-all focus:outline-none"
+              className="w-full py-3.5 rounded-xl bg-brand-secondary border border-brand-accent/20 hover:border-brand-accent hover:bg-brand-secondary/80 text-xs font-semibold text-brand-text tracking-wider flex items-center justify-center gap-2 transition-all focus:outline-none"
             >
               <Sparkles className="w-3.5 h-3.5 text-brand-accent animate-pulse" />
               <span>Start Your Project</span>
