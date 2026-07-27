@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, Github, Twitter, Linkedin, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Instagram, Sparkles, Mail, Copy, Check } from 'lucide-react';
 
 interface FooterProps {
   onStartProject: () => void;
@@ -9,12 +9,19 @@ interface FooterProps {
 export default function Footer({ onStartProject, theme }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const [logoError, setLogoError] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const email = 'everestx27@gmail.com';
 
   const socialLinks = [
-    { name: 'Twitter', href: 'https://twitter.com', icon: Twitter },
-    { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com', icon: Github }
+    { name: 'Instagram', href: 'https://www.instagram.com/everestx_dz?igsh=MTR4Nm95ZzVoam5nMA==', icon: Instagram }
   ];
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -71,23 +78,43 @@ export default function Footer({ onStartProject, theme }: FooterProps) {
               We design and custom-engineer high-density digital products, bespoke software ecosystems, and commanding brand identities for international ventures.
             </p>
 
-            {/* Social Links */}
-            <div className="flex gap-3 pt-2">
-              {socialLinks.map((soc) => {
-                const Icon = soc.icon;
-                return (
-                  <a
-                    key={soc.name}
-                    href={soc.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-8 h-8 rounded-lg bg-brand-secondary/80 border border-white/5 hover:border-brand-accent/30 hover:text-white flex items-center justify-center text-brand-gray transition-all"
-                    aria-label={soc.name}
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                );
-              })}
+            {/* Social Links & Email */}
+            <div className="flex flex-col gap-4 pt-2">
+              <div className="flex gap-3">
+                {socialLinks.map((soc) => {
+                  const Icon = soc.icon;
+                  return (
+                    <a
+                      key={soc.name}
+                      href={soc.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-8 h-8 rounded-lg bg-brand-secondary/80 border border-white/5 hover:border-brand-accent/30 hover:text-white flex items-center justify-center text-brand-gray transition-all"
+                      aria-label={soc.name}
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  );
+                })}
+              </div>
+              
+              <div className="flex items-center gap-2 group/email">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-secondary/50 border border-white/5 group-hover/email:border-brand-accent/20 transition-all">
+                  <Mail className="w-3.5 h-3.5 text-brand-accent" />
+                  <span className="text-[11px] text-brand-gray font-mono">{email}</span>
+                </div>
+                <button
+                  onClick={handleCopyEmail}
+                  className="p-1.5 rounded-lg bg-brand-secondary/80 border border-white/5 text-brand-gray hover:text-brand-accent hover:border-brand-accent/30 transition-all active:scale-95"
+                  title="Copy email"
+                >
+                  {copied ? (
+                    <Check className="w-3.5 h-3.5 text-green-400" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
