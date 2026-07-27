@@ -55,7 +55,7 @@ export default function About() {
             </div>
 
             {/* Vision Card */}
-            <div className="group bg-brand-secondary/40 border border-brand-border p-8 rounded-3xl backdrop-blur-md hover:border-brand-accent/40 transition-all duration-500 hover:translate-y-[-4px] sm:mt-8">
+            <div className="group bg-brand-secondary/40 border border-brand-border p-8 rounded-3xl backdrop-blur-md hover:border-brand-accent/40 transition-all duration-500 hover:translate-y-[-4px]">
               <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                 <Eye className="w-6 h-6 text-purple-400" />
               </div>

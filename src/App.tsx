@@ -9,7 +9,7 @@ import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
 import About from './components/About';
 import Services from './components/Services';
-import FeaturedProjects from './components/FeaturedProjects';
+import ProjectCarousel from './components/ProjectCarousel';
 import Process from './components/Process';
 import Technologies from './components/Technologies';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -155,7 +155,7 @@ export default function App() {
       />
 
       {/* Featured Projects Showcase */}
-      <FeaturedProjects 
+      <ProjectCarousel 
         onStartProject={handleSelectServiceInquire} 
       />
 

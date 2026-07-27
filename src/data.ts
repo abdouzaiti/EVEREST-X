@@ -40,6 +40,7 @@ export interface ProjectItem {
   gradient: string;
   uiMockupType: 'fintech' | 'medical' | 'education' | 'dining';
   link?: string;
+  image?: string;
 }
 
 export interface TestimonialItem {
