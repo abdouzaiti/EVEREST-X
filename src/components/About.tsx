@@ -30,7 +30,7 @@ export default function About() {
           <div className="space-y-8">
             <div className="relative">
               <div className="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-brand-accent to-transparent opacity-50" />
-              <p className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold text-brand-text leading-tight tracking-tight">
+              <p className="text-xl sm:text-2xl font-sans text-brand-text leading-tight tracking-tight">
                 Nous ne concevons pas de modèles génériques. Nous ne recyclons pas d'idées. Nous bâtissons des <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">écosystèmes numériques</span> qui redéfinissent votre avantage concurrentiel.
               </p>
             </div>

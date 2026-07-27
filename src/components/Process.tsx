@@ -1,11 +1,7 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { PROCESS_DATA } from '../data';
-import { CheckCircle2, ArrowRight, Layers, Cpu, ShieldCheck, Zap } from 'lucide-react';
-import { useState } from 'react';
 
 export default function Process() {
-  const [activeStep, setActiveStep] = useState<number>(0);
-
   return (
     <section 
       id="process" 
@@ -30,120 +26,50 @@ export default function Process() {
           </p>
         </div>
 
-        {/* Process layout: Staggered Timeline Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12" id="process-timeline-layout">
-          
-          {/* Left Column: Staggered Timeline Steps Selector (Interactive Sidebar) */}
-          <div className="lg:col-span-4 space-y-3" id="process-steps-sidebar">
-            <span className="text-[10px] font-mono text-brand-dark-gray uppercase tracking-widest block mb-4">
-              CHOISISSEZ UNE PHASE DU CYCLE
-            </span>
-            {PROCESS_DATA.map((step, idx) => {
-              const isActive = activeStep === idx;
-              return (
-                <button
-                  key={step.number}
-                  onClick={() => setActiveStep(idx)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all duration-300 flex items-center gap-4 focus:outline-none ${
-                    isActive 
-                      ? 'bg-brand-secondary border-brand-accent text-brand-text shadow-lg shadow-brand-accent/10' 
-                      : 'bg-brand-secondary/20 border-brand-border text-brand-gray hover:text-brand-text hover:border-brand-border'
-                  }`}
-                  id={`process-sidebar-btn-${idx}`}
-                >
-                  <span className={`font-mono text-xs font-bold px-2 py-1 rounded ${
-                    isActive ? 'bg-brand-accent text-white' : 'bg-brand-primary text-brand-dark-gray'
-                  }`}>
+        {/* Process layout: Clean Responsive Grid of Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="process-timeline-layout">
+          {PROCESS_DATA.map((step, idx) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="group bg-brand-secondary/40 border border-brand-border p-8 rounded-3xl backdrop-blur-md hover:border-brand-accent/40 transition-all duration-500 hover:translate-y-[-4px] flex flex-col justify-between"
+              id={`process-step-card-${idx}`}
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-mono text-xs font-bold text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-lg border border-brand-accent/20">
                     {step.number}
                   </span>
-                  <div className="flex-1 min-w-0">
-                    <span className="block font-sans font-semibold text-xs truncate">
-                      {step.title}
-                    </span>
-                  </div>
-                  <ArrowRight className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                    isActive ? 'text-brand-accent translate-x-1' : 'text-brand-dark-gray'
-                  }`} />
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Right Column: Visual Stage Telemetry Display (Interactive Card) */}
-          <div className="lg:col-span-8" id="process-stage-content">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeStep}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-                className="bg-brand-secondary/60 border border-brand-border rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden min-h-[400px] flex flex-col justify-between"
-                id="process-active-card"
-              >
-                {/* Backglow linked to step */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
-
-                {/* Card Top Block */}
-                <div>
-                  <div className="flex items-center justify-between border-b border-brand-border pb-4 mb-6">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-lg font-bold text-brand-accent">
-                        PHASE_{PROCESS_DATA[activeStep].number}
-                      </span>
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-accent" />
-                      <span className="text-[9px] font-mono text-brand-dark-gray uppercase tracking-widest">
-                        PROCESSUS MÉTICULEUX
-                      </span>
-                    </div>
-                    <span className="bg-brand-success/10 border border-brand-success/20 text-brand-success text-[8px] px-2 py-0.5 rounded font-mono uppercase tracking-wider">
-                      CONFORME SLA
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl sm:text-3.5xl font-extrabold text-brand-text tracking-tight font-sans mb-4">
-                    {PROCESS_DATA[activeStep].title}
-                  </h3>
-
-                  <p className="text-sm sm:text-base text-brand-gray font-light leading-relaxed mb-8 max-w-2xl">
-                    {PROCESS_DATA[activeStep].description}
-                  </p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-brand-accent/30 group-hover:bg-brand-accent transition-colors" />
                 </div>
-
-                {/* Deliverables List Block */}
-                <div>
-                  <h4 className="text-[10px] font-mono text-white tracking-wider uppercase mb-3.5">
-                    LIVRABLES SPÉCIFIQUES INCLUS
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    {PROCESS_DATA[activeStep].deliverables.map((item, i) => (
-                      <div 
-                        key={i} 
-                        className="bg-brand-primary p-3 rounded-xl border border-white/5 hover:border-brand-accent/25 transition-colors flex items-start gap-2.5"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-brand-success flex-shrink-0 mt-0.5" />
-                        <span className="text-xs text-brand-gray font-light leading-snug">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Progress bar representational */}
-                <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-brand-dark-gray">
-                  <span>ÉTAPE {activeStep + 1} SUR 7 DU PROCESSUS D'EXÉCUTION</span>
-                  <div className="flex items-center gap-1">
-                    <span className="text-brand-accent font-semibold">
-                      {Math.round(((activeStep + 1) / 7) * 100)}% COMPLÉTÉ
+                <h3 className="text-xl font-bold text-brand-text mb-3 tracking-tight group-hover:text-brand-accent transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-brand-gray font-light leading-relaxed mb-6 line-clamp-3">
+                  {step.description}
+                </p>
+              </div>
+              
+              <div className="pt-6 border-t border-brand-border/50">
+                <span className="text-[9px] font-mono text-brand-dark-gray uppercase tracking-widest block mb-3">
+                  Livrables stratégiques
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {step.deliverables.slice(0, 2).map((item, i) => (
+                    <span key={i} className="text-[10px] bg-brand-primary/50 text-brand-gray px-2.5 py-1 rounded-lg border border-brand-border/50 whitespace-nowrap">
+                      {item}
                     </span>
-                  </div>
+                  ))}
+                  {step.deliverables.length > 2 && (
+                    <span className="text-[10px] text-brand-accent font-mono pt-1">+{step.deliverables.length - 2}</span>
+                  )}
                 </div>
-
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>

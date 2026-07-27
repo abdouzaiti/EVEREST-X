@@ -13,7 +13,7 @@ export default function Services({ onSelectService }: ServicesProps) {
   return (
     <section 
       id="services" 
-      className="py-32 bg-brand-primary relative overflow-hidden border-t border-brand-secondary/60"
+      className="py-20 bg-brand-primary relative overflow-hidden border-t border-brand-secondary/60"
     >
       {/* Dynamic Backglows */}
       <div className="glow-bg top-[30%] left-[20%] opacity-15" />
@@ -47,53 +47,53 @@ export default function Services({ onSelectService }: ServicesProps) {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.6, delay: idx * 0.08 }}
                 key={service.id}
-                className="group relative flex flex-col justify-between bg-[#101828]/50 border border-white/5 rounded-2xl p-8 hover:bg-[#101828] hover:border-brand-accent/40 transition-all duration-300 shadow-xl cursor-pointer"
+                className="group relative flex flex-col justify-between bg-[#101828]/50 border border-white/5 rounded-xl p-5 hover:bg-[#101828] hover:border-brand-accent/40 transition-all duration-300 shadow-xl cursor-pointer"
                 onClick={() => setActiveModalService(service)}
                 id={`service-card-${service.id}`}
               >
                 {/* Floating Glow Spot */}
                 <div 
-                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
+                  className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
                   style={{
-                    background: `radial-gradient(circle 180px at 50% 10%, ${service.glowColor}, transparent)`
+                    background: `radial-gradient(circle 150px at 50% 10%, ${service.glowColor}, transparent)`
                   }}
                 />
 
                 {/* Content */}
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-brand-primary border border-white/5 flex items-center justify-center mb-6 group-hover:border-brand-accent/30 group-hover:bg-brand-secondary transition-all duration-300">
-                    <IconComponent className="w-6 h-6 text-brand-accent group-hover:scale-110 transition-transform duration-300" />
+                  <div className="w-10 h-10 rounded-lg bg-brand-primary border border-white/5 flex items-center justify-center mb-4 group-hover:border-brand-accent/30 group-hover:bg-brand-secondary transition-all duration-300">
+                    <IconComponent className="w-4 h-4 text-brand-accent group-hover:scale-110 transition-transform duration-300" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white tracking-tight font-sans mb-3 group-hover:text-brand-accent transition-colors">
+                  <h3 className="text-base font-bold text-white tracking-tight font-sans mb-1.5 group-hover:text-brand-accent transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-xs text-brand-gray font-light leading-relaxed mb-6">
+                  <p className="text-[10px] text-brand-gray font-light leading-relaxed mb-4 line-clamp-2">
                     {service.description}
                   </p>
 
                   {/* Snippet list (first 4 items) */}
-                  <ul className="space-y-2 mb-8">
+                  <ul className="space-y-1 mb-5">
                     {service.items.slice(0, 4).map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-[11px] font-sans text-brand-gray/80">
-                        <Check className="w-3.5 h-3.5 text-brand-accent flex-shrink-0" />
-                        <span>{item}</span>
+                      <li key={i} className="flex items-center gap-2 text-[10px] font-sans text-brand-gray/80">
+                        <Check className="w-3 h-3 text-brand-accent flex-shrink-0" />
+                        <span className="truncate">{item}</span>
                       </li>
                     ))}
-                    <li className="text-[10px] text-brand-accent font-semibold tracking-wider font-mono">
-                      + {service.items.length - 4} AUTRES SPÉCIALISATIONS
+                    <li className="text-[9px] text-brand-accent font-semibold tracking-wider font-mono">
+                      + {service.items.length - 4} AUTRES
                     </li>
                   </ul>
                 </div>
 
                 {/* Learn More Trigger */}
-                <div className="pt-4 border-t border-brand-border flex items-center justify-between group-hover:border-brand-accent/20 transition-colors">
-                  <span className="text-xs font-semibold tracking-wider text-brand-gray group-hover:text-brand-text transition-colors uppercase font-mono">
-                    Explorer les Détails
+                <div className="pt-3 border-t border-brand-border flex items-center justify-between group-hover:border-brand-accent/20 transition-colors">
+                  <span className="text-[10px] font-semibold tracking-wider text-brand-gray group-hover:text-brand-text transition-colors uppercase font-mono">
+                    Détails
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-brand-secondary/80 border border-brand-border flex items-center justify-center text-brand-gray group-hover:text-brand-text group-hover:bg-brand-accent/20 group-hover:border-brand-accent/30 transition-all duration-300">
-                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <div className="w-7 h-7 rounded-full bg-brand-secondary/80 border border-brand-border flex items-center justify-center text-brand-gray group-hover:text-brand-text group-hover:bg-brand-accent/20 group-hover:border-brand-accent/30 transition-all duration-300">
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>
 
@@ -107,32 +107,32 @@ export default function Services({ onSelectService }: ServicesProps) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="group relative flex flex-col justify-between bg-gradient-to-tr from-brand-secondary to-[#0b1424] border border-brand-accent/20 rounded-2xl p-8 hover:border-brand-accent/50 transition-all duration-300 shadow-xl overflow-hidden md:col-span-2 lg:col-span-1"
+            className="group relative flex flex-col justify-between bg-gradient-to-tr from-brand-secondary to-[#0b1424] border border-brand-accent/20 rounded-xl p-5 hover:border-brand-accent/50 transition-all duration-300 shadow-xl overflow-hidden"
             id="services-cta-bento"
           >
-            <div className="absolute top-[-30%] right-[-30%] w-48 h-48 bg-brand-accent/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-[-30%] right-[-30%] w-32 h-32 bg-brand-accent/15 rounded-full blur-2xl pointer-events-none" />
             
             <div>
-              <div className="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center mb-6">
-                <Sparkles className="w-5 h-5 text-brand-accent animate-pulse" />
+              <div className="w-10 h-10 rounded-lg bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center mb-4">
+                <Sparkles className="w-4 h-4 text-brand-accent animate-pulse" />
               </div>
 
-              <h3 className="text-xl font-bold text-brand-text tracking-tight font-sans mb-3">
-                Besoin d'une Solution Architecturale sur Mesure ?
+              <h3 className="text-base font-bold text-brand-text tracking-tight font-sans mb-1.5">
+                Solution sur Mesure ?
               </h3>
 
-              <p className="text-xs text-brand-gray font-light leading-relaxed mb-6">
-                Vous avez une vision de produit d'envergure nécessitant des applications mobiles intégrées, des backends d'API à forte concurrence et des chartes de marque ? Laissez nos directeurs artistiques concevoir votre feuille de route personnalisée.
+              <p className="text-[10px] text-brand-gray font-light leading-relaxed mb-4 line-clamp-3">
+                Laissez nos directeurs artistiques concevoir votre feuille de route personnalisée.
               </p>
             </div>
 
             <button
               onClick={() => onSelectService('Bespoke Digital Product Stack')}
-              className="w-full py-3 rounded-xl bg-brand-accent hover:bg-zinc-200 text-xs font-semibold tracking-wider text-black transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer focus:outline-none"
+              className="w-full py-2.5 rounded-lg bg-brand-accent hover:bg-zinc-200 text-[10px] font-semibold tracking-wider text-black transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer focus:outline-none"
               id="services-bento-cta-btn"
             >
-              Consulter nos Directeurs Artistiques
-              <ArrowUpRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              Consultation
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
           </motion.div>
         </div>

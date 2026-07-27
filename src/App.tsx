@@ -144,7 +144,7 @@ export default function App() {
       />
 
       {/* Trusted By Client Logos */}
-      <TrustedBy />
+      <TrustedBy theme={theme} />
 
       {/* About Section */}
       <About />

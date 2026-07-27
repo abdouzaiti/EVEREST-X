@@ -130,19 +130,6 @@ export default function Navbar({ onStartProject, activeSection, theme, onToggleT
             >
               {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
-
-            <button
-              onClick={onStartProject}
-              className="relative px-5 py-2 rounded-xl text-xs font-medium tracking-wider group overflow-hidden bg-brand-secondary border border-brand-accent/20 hover:border-brand-accent transition-all duration-300 focus:outline-none"
-              id="nav-start-project-btn"
-            >
-              <span className="relative z-10 text-brand-text flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-brand-accent animate-pulse" />
-                Lancer Votre Projet
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
           </div>
 
           {/* Mobile Menu Trigger */}
@@ -209,19 +196,7 @@ export default function Navbar({ onStartProject, activeSection, theme, onToggleT
               className="flex flex-col gap-4"
               id="mobile-nav-footer"
             >
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  onStartProject();
-                }}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-accent to-blue-600 text-sm font-semibold tracking-wider text-brand-primary flex items-center justify-center gap-2 focus:outline-none shadow-lg shadow-brand-accent/20"
-                id="mobile-start-project-btn"
-              >
-                <Sparkles className="w-4 h-4 text-brand-primary" />
-                Lancer Votre Projet
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
-              <div className="text-center text-[10px] font-mono text-brand-dark-gray uppercase tracking-widest">
+              <div className="text-center text-[10px] font-mono text-brand-dark-gray uppercase tracking-widest mt-4">
                 Agence EVERESTX • Créer. Grandir. Élever.
               </div>
             </motion.div>
