@@ -40,7 +40,7 @@ export default function Navbar({ onStartProject, activeSection, theme, onToggleT
     setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // height of navbar
+      const offset = 64; // adjusted height of navbar
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -62,8 +62,8 @@ export default function Navbar({ onStartProject, activeSection, theme, onToggleT
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-brand-nav-bg backdrop-blur-md border-b border-brand-border py-4 shadow-lg' 
-            : 'bg-transparent py-6 border-b border-transparent'
+            ? 'bg-brand-nav-bg backdrop-blur-md border-b border-brand-border py-2 shadow-lg' 
+            : 'bg-transparent py-3 border-b border-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -77,7 +77,7 @@ export default function Navbar({ onStartProject, activeSection, theme, onToggleT
               <img 
                 src="/logo.png" 
                 alt="EVERESTX Logo" 
-                className={`h-[60px] md:h-[72px] w-auto object-contain transition-transform group-hover:scale-105 ${theme === 'light' ? 'invert hue-rotate-180' : ''}`} 
+                className={`h-[44px] md:h-[54px] w-auto object-contain transition-transform group-hover:scale-105 ${theme === 'light' ? 'invert hue-rotate-180' : ''}`} 
                 referrerPolicy="no-referrer"
                 onError={() => setLogoError(true)}
               />
